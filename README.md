@@ -1,1 +1,1 @@
-# South African Mathematics Training 2020-2021
+# South African Mathematics Training Camps 2020-2021
