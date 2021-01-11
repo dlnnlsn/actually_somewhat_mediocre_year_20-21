@@ -59,6 +59,15 @@ for some positive integers $a$, $b$, $c$, and $d$.}
 $$f(x + y) = f(x) + f(y) + \frac{1}{2021} $$
 Where $\mathbb{R}^+$ is the set of positive real numbers. }
 
+Assume that such a function $f$ exists. Consider the function $g: \mathbb{R}^+ \rightarrow \mathbb{R}^+$ defined by 
+$$g(x) = f(x) + \frac{1}{2021}$$
+Rewriting the function equation, in terms of $g$, we get. 
+$$g(x + y) = g(x) + g(y)$$
+Clearly, $g(nx) = ng(x)$ for $n \in \mathbb{Z}$. Letting $x = \frac{1}{n}$, we get $g(1) = ng(\frac{1}{n}) \iff g(\frac{1}{n}) = \frac{g(1)}{n}$. Now no matter what value $g(1)$ takes, we can find a large enough $n$ such that $g(\frac{1}{n}) = \frac{g(1)}{n} < \frac{1}{2021}$. Thus, we must have $f(\frac{1}{n}) + \frac{1}{2021} < \frac{1}{2021} \implies f(\frac{1}{n}) < 0$. Since the codomain is the positive real numbers, we cannot have $f$ returning a negative value. This is thus a contradiction.
+
+Therefore, there are no functions $f$ satisfying the functional equation.
+
+
 \item % Jon
 \it{Jon has a collection of weights with different positive integer values. Is it possible that there are exactly $2020$ ways to choose some of these distinct weights such that their total weight is $2020$?}
 
