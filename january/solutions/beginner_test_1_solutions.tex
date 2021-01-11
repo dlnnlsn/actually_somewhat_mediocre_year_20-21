@@ -117,7 +117,13 @@ Note that any L-block covers at most 1 shaded square. To cover all of them, we w
 
 \item % Moldova, 61st Maths Olympiad (2017), 7.1 modified
 Find all natural numbers $x$, $y$ and $z$ satisfying 
-$$x + \frac{1}{y + \frac{1}{z}} = \frac{850862}{421}$$
+$$x + \frac{1}{y + \frac{1}{z}} = \frac{850862}{421}$$\\
+
+\textbf{Solution:}\\
+Note $\frac{850862}{421}$ = $2021\frac{21}{421}$ where 2021 is the integer part of the fraction.
+
+Since $y$ and $z$ are given as natural numbers, we have that $y + \frac{1}{z} > 1$ which implies $\frac{1}{y + \frac{1}{z}} < 1$. Since $x$ is a natural number,  $\frac{1}{y + \frac{1}{z}}$ will need to be the fractional part of  $2021\frac{21}{421}$. This will make $x$ the integer part of $2021\frac{21}{421}$ which means $x$ = 2021. Now we are left with $\frac{1}{y + \frac{1}{z}} = \frac{21}{421}$ which we can rewrite as $y + \frac{1}{z} = \frac{421}{21} = 20\frac{1}{21}$. Since $z\geq1$, we will have $\frac{1}{z}\leq1$. If $z = 1$, $y + \frac{1}{z} = y + \frac{1}{1} = y + 1 = 20\frac{1}{21}$ which would make $y = 19\frac{1}{21}$. This would be a contradiction since $y$ is given as a natural number. From this we conclude that $z\neq 1$ and that $\frac{1}{z}<1$ . This means that $\frac{1}{z}$ will be the fractional part and $y$ the integer part of $20\frac{1}{21}$. This makes $y = 20$ and $z = 21$. 
+This means the only possible solution for $(x, y, z)$ is $(2021, 20, 21)$. 
 
 
 \end{enumerate}
