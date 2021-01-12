@@ -44,6 +44,38 @@
   \item % Romania TST 2011, P12
   {\itshape Prove that there are infinitely many $n \in \mathbb{N}$ such that there exists a $d \in \mathbb{N}$ with both $d$ and $d + n$ being factors of $n^2 + 1$.}
   
+  \begin{description}
+    \item[Solution 1] Note that $d = n = 1$ provides a solution. Suppose that $k$ and $m$ are such that $k \mid m^2 + 1$ and $k + m \mid m^2 + 1$. Let
+    \begin{align*}
+      d & = k + m & \text{ and } && n & = m + \frac{m^2 + 1}{k}.
+    \end{align*}
+    We claim that $d \mid n^2 + 1$ and $d + n \mid n^2 + 1$. We first show that $d \mid n^2 + 1$. Since $\gcd(d, k) = \gcd(m, k) = 1$, it is enough to show that
+    \[
+      k^2 (n^2 + 1) = (m^2 + km + 1)^2 + k^2
+    \]
+    is divisible by $d = k + m$. We note that
+    \[
+      (m^2 + km + 1)^2 + k^2 \equiv k^2 + 1 \equiv (-m)^2 + 1 \equiv 0 \pmod{k + m}
+    \]
+    since $k + m \mid m^2 + 1$ by assumption. We now show that $n + d \mid n^2 + 1$. We know that $n^2 \equiv (-d)^2 + 1 \pmod{n + d}$, so we can instead show that $n + d \mid d^2 + 1$. We note that
+    \[
+      k(n + d) = (km + m^2 + 1) + k(k + m) = k^2 + 2km + m^2 + 1 = (k + m)^2 + 1 = d^2 + 1.
+    \]
+    and so $d^2 + 1$ is divisible by $n + d$, as claimed.
+
+    We see that if $k$ and $m$ are such that $k \mid m^2 + 1$ and $k + m \mid m^2 + 1$, then the values of $d$ and $n$ given above also provide a solution to the problem. Since $n > m$, we obtain infinitely many solutions in this way.
+
+    \item[Solution 2] We recall \emph{Cassini's Identity}
+    \[
+      F_{n + 1} F_{n - 1} - F_n^2 = (-1)^n
+    \] 
+    where $F_k$ is the $k^\text{th}$ Fibonacci number. Considering the even terms gives us
+    \[
+      F_{2n}^2 + 1 = F_{2n + 1} F_{2n - 1} = F_{2n - 1} (F_{2n} + F_{2n - 1})
+    \]
+    and so $n = F_{2n}$ and $d = F_{2n - 1}$ provides infinitely many solutions to the problem.
+  \end{description}
+
   \end{enumerate}
   
   \vfill
