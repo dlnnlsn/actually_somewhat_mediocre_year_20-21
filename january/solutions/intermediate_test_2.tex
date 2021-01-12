@@ -35,16 +35,45 @@
   \item % Jon
   {\itshape Isaac is planning a nine-day holiday. Every day he will go surfing, or water skiing, or he will rest. On any given day he does just one of these three things. He never does different water-sports on consecutive days. How many schedules are possible for the holiday?}
   
+  
   \item % Danielle from Ukrainian MO
   {\itshape A positive integer $N$ has exactly $2021$ positive divisors (including $1$ and $N$ itself), and it is divisible by $2021$.
   Prove that $N$ is not divisible by $2021^{43}$.}
-  
+
+  We recall that if
+  \[
+    N = {p_1}^{a_1} {p_2}^{a_2} \cdots {p_k}^{a_k}
+  \]
+  is the prime factorisation of $N$, then the number of divisors of $N$ is given by
+  \[
+    (a_1 + 1)(a_2 + 1) \cdots (a_k + 1).
+  \]
+
+  We thus investigate the solutions to
+  \[
+    (a_1 + 1)(a_2 + 1) \cdots (a_k + 1) = 2021.
+  \]
+  We know that $2021 = 43 \times 47$, which are both prime, and so the only ways of factorising $2021$ as a product of some number of integers are $2021$ and $43 \times 47$.
+
+  Since $N$ is divisible by $2021$, $N$ has at least the two primes factors $43$ and $47$, and so it is the second factorisation that is relevant: we must have that
+  \begin{align*}
+    a_1 + 1 & = 43 & \text{ and } && a_2 + 1 & = 47
+  \end{align*}
+  or vice versa. Thus the only options for $N$ are $43^{42} \times 47^{46}$, or $43^{46} \times 47^{42}$, neither of which is divisible by $2021^{43} = 43^{43} \times 47^{43}$.
+    
   
   \item % Ralph: found in one of the books. Can't remember which one.
   {\itshape Let $a$, $b$, $c$, $x$, $y$ and $z$ be positive real numbers with $a + b + c = x + y + z$.
   Prove that 
   \[ \frac{a}{x + y} + \frac{b}{y + z} + \frac{c}{z + x} + \frac{x}{a + b} + \frac{y}{b + c} + \frac{z}{c + a} > 2. \]}
   
+  Increasing the value of each of the denominators decreases the value of each fraction, and so
+  \begin{align*}
+    \frac{a}{x + y} & + \frac{b}{y + z} + \frac{c}{z + x} + \frac{x}{a + b} + \frac{y}{b + c} + \frac{z}{c + a} \\
+    & > \frac{a}{x + y + z} + \frac{b}{y + z + x} + \frac{c}{z + x + y} + \frac{x}{a + b + c} + \frac{y}{b + c + a} + \frac{z}{c + a + b} \\
+    & = \frac{a + b + c}{x + y + z} + \frac{x + y + z}{a + b + c} \\
+    & = 2.
+  \end{align*}
   
   \end{enumerate}
   
