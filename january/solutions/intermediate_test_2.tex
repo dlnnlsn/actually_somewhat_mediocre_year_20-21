@@ -31,6 +31,33 @@
   Find the value of
   \[ a +ar +ar^2 +ar^3 +\dotsb +ar^{6062}. \]}
   
+  \textbf{Solution 1}\newline
+
+We can factorise the equations into $\frac{a(r^{2021} - 1)}{r - 1} = 200$, $\frac{a(r^{4042} - 1)}{r - 1} = 380$ and $\frac{a(r^{6063} - 1)}{r - 1}$ . Dividing the second equation by the first gives $$\frac{r^{4202} - 1}{r^{2021} - 1} = \frac{380}{200} = \frac{19}{10}$$ Let $x = r^{2021}$. The equation then becomes $\frac{x^2 - 1}{x + 1} = \frac{19}{10}$. This simplifies to $x + 1 = \frac{19}{10}$, so $r^{2021} = x = \frac{9}{10}$. We finish off with the following
+\begin{align*}
+\frac{a(r^{2021} - 1)}{r - 1} &= 200\\
+\frac{a(r^{2021} - 1)}{r - 1}\cdot \frac{r^{6063} - 1}{r^{2021} - 1} &= 200\cdot \frac{r^{6063} - 1}{r^{2021} - 1}\\
+\frac{a(r^{6063} - 1)}{r - 1} &= 200 \cdot \frac{x^3 - 1}{x - 1}\\
+\frac{a(r^{6063} - 1)}{r - 1} &= 200 \cdot \frac{(9/10)^3 - 1}{(9/10) - 1}\\
+\frac{a(r^{6063} - 1)}{r - 1} &= 542
+\end{align*}
+\textbf{Solution 2}\newline
+
+This solution does not use factorisations, and is the one I originally came up with.
+\begin{align*}
+380 &= a +ar + \dotsb +ar^{4041}\\
+380 &= (a +ar +\dotsb +ar^{2020}) + (ar^{2021} + ar^{2022} + \dotsb + ar^{4041})\\
+380 &= (200) + r^{2021}(a + ar + \dotsb + ar^{2020})\\
+380 &= (200) + r^{2021}(200)\\
+\end{align*}
+So $r^{2021} = \frac{9}{10}$. We apply the same technique.
+\begin{align*}
+a +ar + \dotsb +ar^{6062} &= a + ar + \dotsb +ar^{6062}\\
+&= (a +ar +\dotsb +ar^{4041}) + (ar^{4042} + ar{4043} +  \dotsb + ar^{6062})\\
+&= (380) + r^{4042}(a + ar + \dotsb + ar^{2020})\\
+&= (380) + \left(\frac{9}{10}\right)^2\cdot(200)\\
+&= 542
+\end{align*}
   
   \item % Jon
   {\itshape Isaac is planning a nine-day holiday. Every day he will go surfing, or water skiing, or he will rest. On any given day he does just one of these three things. He never does different water-sports on consecutive days. How many schedules are possible for the holiday?}
