@@ -1,0 +1,129 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts,amssymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \textbf{\Large Advanced Test 2 Solutions}
+  % LEVEL is Senior, Intermediate or Beginner
+  % NUMBER is the test number: 1, 2, etc.
+  \\ \vspace{1em}
+  \textbf{\large January Camp 2021}
+\end{center}
+
+\vspace{24pt}
+
+\begin{enumerate}[1.]
+
+  \item % Danielle from Ukrainian MO
+  {\itshape A positive integer $N$ has exactly $2021$ positive divisors (including $1$ and $N$ itself), and it is divisible by $2021$.
+  Prove that $N$ is not divisible by $2021^{43}$.}
+
+  We recall that if
+  \[
+    N = {p_1}^{a_1} {p_2}^{a_2} \cdots {p_k}^{a_k}
+  \]
+  is the prime factorisation of $N$, then the number of divisors of $N$ is given by
+  \[
+    (a_1 + 1)(a_2 + 1) \cdots (a_k + 1).
+  \]
+
+  We thus investigate the solutions to
+  \[
+    (a_1 + 1)(a_2 + 1) \cdots (a_k + 1) = 2021.
+  \]
+  We know that $2021 = 43 \times 47$, which are both prime, and so the only ways of factorising $2021$ as a product of some number of integers are $2021$ and $43 \times 47$.
+
+  Since $N$ is divisible by $2021$, $N$ has at least the two primes factors $43$ and $47$, and so it is the second factorisation that is relevant: we must have that
+  \begin{align*}
+    a_1 + 1 & = 43 & \text{ and } && a_2 + 1 & = 47
+  \end{align*}
+  or vice versa. Thus the only options for $N$ are $43^{42} \times 47^{46}$, or $43^{46} \times 47^{42}$, neither of which is divisible by $2021^{43} = 43^{43} \times 47^{43}$.
+  
+  
+  \item % Ralph: found in one of the books. Can't remember which one.
+  {\itshape Let $a$, $b$, $c$, $x$, $y$ and $z$ be positive real numbers with $a + b + c = x + y + z$.
+  Prove that 
+  \[ \frac{a}{x + y} + \frac{b}{y + z} + \frac{c}{z + x} + \frac{x}{a + b} + \frac{y}{b + c} + \frac{z}{c + a} > 2. \]}
+
+  Increasing the value of each of the denominators decreases the value of each fraction, and so
+  \begin{align*}
+    \frac{a}{x + y} & + \frac{b}{y + z} + \frac{c}{z + x} + \frac{x}{a + b} + \frac{y}{b + c} + \frac{z}{c + a} \\
+    & > \frac{a}{x + y + z} + \frac{b}{y + z + x} + \frac{c}{z + x + y} + \frac{x}{a + b + c} + \frac{y}{b + c + a} + \frac{z}{c + a + b} \\
+    & = \frac{a + b + c}{x + y + z} + \frac{x + y + z}{a + b + c} \\
+    & = 2.
+  \end{align*}
+  
+  
+  \item % Ireland Book 2017 P15 (orange book)
+  {\itshape Let circles $\Gamma_1$ and $\Gamma_2$ intersect at $A$ and $B$. One of the tangents to $\Gamma_1$ and $\Gamma_2$ touches them at $P$ and $Q$ respectively. Let line $AB$ meet the circumcircle of $PQA$ at $C$. Join $CP$ and $CQ$ and extend both to meet $\Gamma_1$ and $\Gamma_2$ at $F$ and $E$ respectively. Prove that the quadrilateral $PQFE$ is cyclic.}
+  
+  
+  \item % APMO 2007
+  {\itshape Let $K$ be a set of nine different positive integers which only have $2027$ and $2029$ as prime factors.
+  Show that there are three distinct integers $a$, $b$, and $c$ in $K$ such that $\sqrt[3]{abc}$ is an integer.}
+  
+  
+  \item % Romania TST 2011, P12
+  {\itshape Prove that there are infinitely many $n \in \mathbb{N}$ such that there exists a $d \in \mathbb{N}$ with both $d$ and $d + n$ being factors of $n^2 + 1$.}
+  
+  \begin{description}
+    \item[Solution 1] Note that $d = n = 1$ provides a solution. Suppose that $k$ and $m$ are such that $k \mid m^2 + 1$ and $k + m \mid m^2 + 1$. Let
+    \begin{align*}
+      d & = k + m & \text{ and } && n & = m + \frac{m^2 + 1}{k}.
+    \end{align*}
+    We claim that $d \mid n^2 + 1$ and $d + n \mid n^2 + 1$. We first show that $d \mid n^2 + 1$. Since $\gcd(d, k) = \gcd(m, k) = 1$, it is enough to show that
+    \[
+      k^2 (n^2 + 1) = (m^2 + km + 1)^2 + k^2
+    \]
+    is divisible by $d = k + m$. We note that
+    \[
+      (m^2 + km + 1)^2 + k^2 \equiv k^2 + 1 \equiv (-m)^2 + 1 \equiv 0 \pmod{k + m}
+    \]
+    since $k + m \mid m^2 + 1$ by assumption. We now show that $n + d \mid n^2 + 1$. We know that $n^2 \equiv (-d)^2 + 1 \pmod{n + d}$, so we can instead show that $n + d \mid d^2 + 1$. We note that
+    \[
+      k(n + d) = (km + m^2 + 1) + k(k + m) = k^2 + 2km + m^2 + 1 = (k + m)^2 + 1 = d^2 + 1.
+    \]
+    and so $d^2 + 1$ is divisible by $n + d$, as claimed.
+
+    We see that if $k$ and $m$ are such that $k \mid m^2 + 1$ and $k + m \mid m^2 + 1$, then the values of $d$ and $n$ given above also provide a solution to the problem. Since $n > m$, we obtain infinitely many solutions in this way.
+
+    \item[Solution 2] We recall \emph{Cassini's Identity}
+    \[
+      F_{n + 1} F_{n - 1} - F_n^2 = (-1)^n
+    \] 
+    where $F_k$ is the $k^\text{th}$ Fibonacci number. Considering the even terms gives us
+    \[
+      F_{2n}^2 + 1 = F_{2n + 1} F_{2n - 1} = F_{2n - 1} (F_{2n} + F_{2n - 1})
+    \]
+    and so $n = F_{2n}$ and $d = F_{2n - 1}$ provides infinitely many solutions to the problem.
+  \end{description}
+
+  \end{enumerate}
+  
+  \vfill
+  % ASCII art
+  \centering
+  \begin{BVerbatim}
+    .-~~~~-.
+   {  o     }
+   /       /
+  `--r'   {    ,___.-',
+    /      `-~         ',
+   {                    '
+    \                  /
+     \                /
+    ~ ~~~~~~~~~~~~~~~~~ ~
+   ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+       ~ ~ ~ ~ ~ ~ ~ ~
+  \end{BVerbatim}
+  
+  \end{document}
+  

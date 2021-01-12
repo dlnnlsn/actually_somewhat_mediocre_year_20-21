@@ -15,8 +15,6 @@
   % NUMBER is the test number: 1, 2, etc.
   \\ \vspace{1em}
   \textbf{\large January Camp 2021}
-  \\ \vspace{1em}
-  \textbf{\large Time: $2\frac{1}{2}$ hours}
 \end{center}
 
 \vspace{24pt}
@@ -45,6 +43,10 @@ $$k \in \{\frac{1}{2}, 1, 2\}$$
 \item % Ireland, 2017, Powerful Sequences, Q2
 {\itshape Let $O$ be the circumcentre of $\triangle ABC$. Let $X$, $Y$ and $Z$ be the reflections of $O$ over $BC$, $CA$ and $AB$ respectively. Prove that $\triangle XYZ$ is congruent to $\triangle ABC$ and the corresponding sides are parallel.}
 
+Let $X'$ be the intersection of $OX$ and $BC$ and $Z'$ be the intersection of $OZ$ and $AB$. Since $X$ is the reflection of $O$ across $BC$ we have $OX' = X'X$ as well as $OX \perp BC$ and since $X'$ is on $OX$ we also have $OX' \perp BC$. $BC$ is a chord on the circumcircle with centre $O$ and $OX'$ is a perpendicular on $BC$, thus $BX' = X'C$. By similar arguments we have $OZ' = Z'Z$ and $AZ' = Z'B$. 
+
+By midpoint theorem on $\triangle ABC$, we have $X'Z'||CA$ and $2XX' = AC$. By midpoint theorem on $\triangle OZX$, we have $X'Z'||XZ$ and $2X'Z' = XZ$. Therefore, $XZ||X'Z'||CA$ and $XZ = 2X'Z' = AC$. Applying similar arguments to prove $XY = AB$, and $YZ = BC$ gives $\triangle ABC \equiv \triangle XYZ$. The correspoonding sides are parallel part follows with similar arguments as well. 
+
 
 \item % French Olympiad Training Assignment from 2015-2016: http://maths-olympiques.fr/wp-content/uploads/2017/10/ofm-2015-2016-envoi-1.pdf
 {\itshape Find the smallest non-negative integer which can not be written in the from
@@ -52,6 +54,32 @@ $$k \in \{\frac{1}{2}, 1, 2\}$$
   \frac{2^a - 2^b}{2^c - 2^d}
 \]
 for some positive integers $a$, $b$, $c$, and $d$.}
+
+We have the following representations for the numbers from $0$ to $10$:
+\begin{align*}
+  0 & = \frac{2^1 - 2^1}{2^2 - 2^1} & 1 & = \frac{2^2 - 2^1}{2^2 - 2^1} & 2 & = 2 \times 1 = \frac{2^3 - 2^2}{2^2 - 2^1} \\
+  3 & = \frac{2^3 - 2^1}{2^2 - 2^1} & 4 & = 2 \times 2 = \frac{2^4 - 2^3}{2^2 - 2^1} & 5 & = \frac{2^5 - 2^1}{2^3 - 2^1} \\
+  6 & = 2 \times 3 = \frac{2^4 - 2^2}{2^2 - 2^1} & 7 & = \frac{2^4 - 2^1}{2^2 - 2^1} & 8 & = 2 \times 4 = \frac{2^5 - 2^4}{2^2 - 2^1} \\
+  9 & = \frac{2^7 - 2^1}{2^4 - 2^1} & 10 & = 2 \times 5 = \frac{2^6 - 2^2}{2^3 - 2^1} & &
+\end{align*}
+
+We claim that there is no representation for the number $11$. Suppose that
+\[
+  2^a - 2^b = 11(2^c - 2^d).
+\]
+We may suppose without loss of generality that $a > b$ and $c > d$. Then the largest power of $2$ dividing the left hand side of the equation is $2^b$, and the largest power of $2$ dividing the right hand side is $2^d$. Thus we must have that $b = d$. Letting $x = a - b$ and $y = c - d$, we obtain
+\[
+  2^x - 1 = 11(2^y - 1).
+\]
+Consider this equation modulo $5$. We obtain that
+\[
+  2^x \equiv 2^y \pmod 5 \implies 2^{x - y} \equiv 1 \pmod 5.
+\]
+By trial and error or otherwise, we know that the smallest power of $2$ that leaves a remainder of $1$ when divided by $5$ is $2^4$, and so we have that $x - y \geq 4$. But then
+\[
+  2^x - 1 \geq 2^{y + 4} - 1 > 16(2^y - 1) > 11(2^y - 1)
+\]
+and so it is not possible for $2^x - 1$ to be equal to $11(2^y - 1)$.
 
 
 \item % Indonesia 2012, Day 2 Q2
