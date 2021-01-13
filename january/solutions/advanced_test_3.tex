@@ -70,35 +70,50 @@ We can then check that this does indeed satisfy the original condition:
 \item % French NT Training Assignment 2017, Exercise 8
 {\itshape Does there exist an infinite set $A$ of natural numbers such that any finite sum of distinct elements of $A$ is not a perfect power, where a perfect power is a number of the form $a^b$ with $b > 1$ and $a \in \mathbb{N}$.}
 
-The answer is \textbf{yes}. We construct the set $A$ inductively. Let $a_0 = 2$ (or any other number that is not a perfect power).
+\begin{description}
+  \item[Solution]
+    The answer is \textbf{yes}. We construct the set $A$ inductively. Let $a_0 = 2$ (or any other number that is not a perfect power).
 
-Suppose that we have already chosen values $A_n = \{a_0, a_1, \dots, a_n\}$ such that any finite sum involving only elements of $A_n$ is not a perfect power. We will choose $a_{n + 1}$ such that the same is true of $A_{n + 1} = A_n \cup \{ a_{n + 1} \}$.
+    Suppose that we have already chosen values $A_n = \{a_0, a_1, \dots, a_n\}$ such that any finite sum involving only elements of $A_n$ is not a perfect power. We will choose $a_{n + 1}$ such that the same is true of $A_{n + 1} = A_n \cup \{ a_{n + 1} \}$.
 
-Let $S$ be the set of values of all possible sums involving distinct elements of $A_n$. We are done if we can find $a_{n + 1}$ that is not a perfect power, and such that $a_{n + 1} + s$ is not a perfect power for every element $s \in S$.
+    Let $S$ be the set of values of all possible sums involving distinct elements of $A_n$. We are done if we can find $a_{n + 1}$ that is not a perfect power, and such that $a_{n + 1} + s$ is not a perfect power for every element $s \in S$.
 
-Let $B$ be the largest element of $S$. (i.e. $B = a_0 + a_1 + \dotsb + a_n$) If we could find an interval $[x, x + B]$ (where $x \notin A_n$) that does not contain any perfect powers, then we could set $a_{n + 1} = x$. Then since $a_{n+1} + s$ falls in this interval for every $s \in S$, we know that $a_{n + 1} + s$ is not a perfect power for every $s \in S$.
+    Let $B$ be the largest element of $S$. (i.e. $B = a_0 + a_1 + \dotsb + a_n$) If we could find an interval $[x, x + B]$ (where $x \notin A_n$) that does not contain any perfect powers, then we could set $a_{n + 1} = x$. Then since $a_{n+1} + s$ falls in this interval for every $s \in S$, we know that $a_{n + 1} + s$ is not a perfect power for every $s \in S$.
 
-We claim that there are in fact arbitrarily long intervals of natural numbers which do not contain any perfect powers. Let $p(N)$ be the number of perfect powers that are at most $N$. We claim that $p(N)/N$ becomes arbitrarily small as $N$ gets larger. This completes the proof, because if every interval of length $B + 1$ always contained a perfect power, then we would have
-\[
-  p(N) \geq \left\lfloor \frac{N}{B + 1} \right\rfloor > \frac{N}{B + 1} - 1,
-\]
-and so $p(N)/N$ would tend to something at least as large as $\frac{1}{B + 1}$ as $N$ tends to infinity.
+    We claim that there are in fact arbitrarily long intervals of natural numbers which do not contain any perfect powers. Let $p(N)$ be the number of perfect powers that are at most $N$. We claim that $p(N)/N$ becomes arbitrarily small as $N$ gets larger. This completes the proof, because if every interval of length $B + 1$ always contained a perfect power, then we would have
+    \[
+      p(N) \geq \left\lfloor \frac{N}{B + 1} \right\rfloor > \frac{N}{B + 1} - 1,
+    \]
+    and so $p(N)/N$ would tend to something at least as large as $\frac{1}{B + 1}$ as $N$ tends to infinity.
 
-We now derive an estimate for $p(N)/N$. Let $k$ be the largest natural number such that there exists a natural number $a$ such that $a^k \leq N$. Since $2^k \leq a^k \leq N$, we know that $k \leq \log_2 N$.
+    We now derive an estimate for $p(N)/N$. Let $k$ be the largest natural number such that there exists a natural number $a$ such that $a^k \leq N$. Since $2^k \leq a^k \leq N$, we know that $k \leq \log_2 N$.
 
-Since there are at most $\sqrt{N}$ perfect squares that are at most $N$, at most $\sqrt[3]{N}$ perfect cubes that are at most $N$, and so on, we see that
-\[
-  p(N) \leq \sqrt{N} + \sqrt[3]{N} + \sqrt[4]{N} + \dotsb + \sqrt[k]{N}
-\]
-and since
-\[
-  \sqrt[i]{N} \leq \sqrt{N}
-\]
-for each $i$, we obtain that
-\[
-  p(N) \leq k \sqrt{N} \leq \sqrt{N} \log_2 N \implies \frac{p(N)}{N} \leq \frac{\sqrt{N} \log_2 N}{N}
-\]
-which does indeed tend to $0$ as $N \to \infty$.
+    Since there are at most $\sqrt{N}$ perfect squares that are at most $N$, at most $\sqrt[3]{N}$ perfect cubes that are at most $N$, and so on, we see that
+    \[
+      p(N) \leq \sqrt{N} + \sqrt[3]{N} + \sqrt[4]{N} + \dotsb + \sqrt[k]{N}
+    \]
+    and since
+    \[
+      \sqrt[i]{N} \leq \sqrt{N}
+    \]
+    for each $i$, we obtain that
+    \[
+      p(N) \leq k \sqrt{N} \leq \sqrt{N} \log_2 N \implies \frac{p(N)}{N} \leq \frac{\sqrt{N} \log_2 N}{N}
+    \]
+    which does indeed tend to $0$ as $N \to \infty$.
+  \item[Alternative Solution]
+    Consider the set
+    \[
+      S = \left\{ 2^{k + 1} \cdot 3^k \middle| k \in \mathbb{N}_0 \right\}
+    \]
+    containing the numbers $2, 12, 72, 78, \dots$. We will show that no finite sum of elements of $S$ is a perfect power.
+
+    Consider any finite sum of elements of $S$
+    \[
+      n = 2^{a_1 + 1} \cdot 3^{a_1} + 2^{a_2 + 1} \cdot 3^{a_2} + \dotsb + 2^{a_k + 1} \cdot 3^{a_k}
+    \]
+    where $a_1 < a_2 < \dots < a_k$. We see that the largest power of $2$ that divides $n$ is $2^{a_1 + 1}$, and the largest power of $3$ that divides $n$ is $3^{a_1}$. If $n$ is the $m^\text{th}$ power of an integer, then we need that $m \mid a_1 + 1$ and also $m \mid a_1$. But then $m \mid 1$, and so $n$ can only be the first power of an integer, but not any higher power.
+\end{description}
 
 \item % Ukraine 2016-2017 Grade 11 Round 3 Q5
 {\itshape Let $ABC$ be an acute non-isosceles triangle with altitudes $BB_1$ and $CC_1$ intersecting at $H$.
