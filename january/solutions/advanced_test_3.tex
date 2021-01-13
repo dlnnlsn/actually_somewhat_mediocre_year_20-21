@@ -36,7 +36,27 @@ Is it possible for $p$ to be $1/k$ for some integer $k$?}
 
 \item % Canada MO 2013, Q1
 {\itshape Find all polynomials $P$ with real coefficients such that $(x + 1)P(x - 1) - (x - 1)P(x)$ is constant.}
+Letting $x = 2$, we see that the constant is $2P(0)$. Thus the equation is simply
+$$(x + 1)P(x - 1) - (x - 1)P(x) = 2P(0) $$
+Leeting $x = 0$, we get $P(-1) = P(0)$. Consider now the polynomial $Q(x) = P(x) - P(0)$. Substituting $P(x) = Q(x) + P(0)$ into the equation, we get
+\begin{align*}
+  (x + 1)(Q(x - 1) + P(0)) - (x - 1)(Q(x) + P(0)) &= 2P(0) \\
+  \implies (x + 1)Q(x - 1) - (x - 1)Q(x) = 0
+\end{align*}
+Now, we know that $Q(0) = Q(-1) = 0$, so $Q$ can be written as $Q(x) = kx(x + 1)R(x)$ where $k$ is some constant, and $R(x)$ is some polynomial. Thus gives 
+$$k(x + 1)(x - 1)(x)R(x - 1) - k(x - 1)(x)(x + 1)R(x) = 0 $$
+which can be simplified to
+$$kx(x^2 - 1)(R(x - 1) - R(x)) = 0$$
+when $x(x^2 - 1) \ne 0$, we must have $R(x) = R(x - 1)$. This is true for infinitely many $x$ and since $R$ is a polynomial, we then have that $R$ must be a constant polynomial. Thus, we know that $Q$ is exactly $Q(x) = kx(x + 1)$. From here we can see that $P$ must be
+$$P(x) = kx(x + 1) + c$$
+so indeed all polynomials of the form $P(x) = kx(x + 1) + c$ satisfy the constaint.
 
+We can then check that this does indeed satisfy the original condition:
+\begin{align*}
+  (x + 1)P(x - 1) - (x - 1)P(x) &= (x + 1) \cdot (k(x - 1)x + c) - (x - 1) \cdot (kx(x + 1) + c) \\
+  &= kx(x^2 - 1) - kx(x^2 - 1) + c \cdot (x + 1) - c \cdot (x - 1) \\
+  &= 2c
+\end{align*}
 
 \item % French NT Training Assignment 2017, Exercise 8
 {\itshape Does there exist an infinite set $A$ of natural numbers such that any finite sum of dintinct elements of $A$ is not a perfect power, where a perfect power is a number of the form $a^b$ with $b > 1$ and $a \in \mathbb{N}$.}
