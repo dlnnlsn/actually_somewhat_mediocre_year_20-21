@@ -36,9 +36,9 @@ Is it possible for $p$ to be $1/k$ for some integer $k$?}
 
 \item % Canada MO 2013, Q1
 {\itshape Find all polynomials $P$ with real coefficients such that $(x + 1)P(x - 1) - (x - 1)P(x)$ is constant.}
-Letting $x = 2$, we see that the constant is $2P(0)$. Thus the equation is simply
+Letting $x = 1$, we see that the constant is $2P(0)$. Thus the equation is simply
 $$(x + 1)P(x - 1) - (x - 1)P(x) = 2P(0) $$
-Leeting $x = 0$, we get $P(-1) = P(0)$. Consider now the polynomial $Q(x) = P(x) - P(0)$. Substituting $P(x) = Q(x) + P(0)$ into the equation, we get
+Letting $x = 0$, we get $P(-1) = P(0)$. Consider now the polynomial $Q(x) = P(x) - P(0)$. Substituting $P(x) = Q(x) + P(0)$ into the equation, we get
 \begin{align*}
   (x + 1)(Q(x - 1) + P(0)) - (x - 1)(Q(x) + P(0)) &= 2P(0) \\
   \implies (x + 1)Q(x - 1) - (x - 1)Q(x) = 0
@@ -49,7 +49,7 @@ which can be simplified to
 $$kx(x^2 - 1)(R(x - 1) - R(x)) = 0$$
 when $x(x^2 - 1) \ne 0$, we must have $R(x) = R(x - 1)$. This is true for infinitely many $x$ and since $R$ is a polynomial, we then have that $R$ must be a constant polynomial. Thus, we know that $Q$ is exactly $Q(x) = kx(x + 1)$. From here we can see that $P$ must be
 $$P(x) = kx(x + 1) + c$$
-so indeed all polynomials of the form $P(x) = kx(x + 1) + c$ satisfy the constaint.
+so only polynomials of the form $P(x) = kx(x + 1) + c$ can satisfy the constraint.
 
 We can then check that this does indeed satisfy the original condition:
 \begin{align*}
