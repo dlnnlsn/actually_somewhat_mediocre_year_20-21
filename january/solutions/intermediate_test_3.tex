@@ -49,6 +49,15 @@ a^2 + b^2 + c^2 &= (a + b + c)^2 - 2ab -2bc -2c\\
 The probability of opening the book in the same chapter twice in a row is $p$.
 Is it possible for $p$ to be $1/k$ for some integer $k$?}
 
+Notice that the book has $\frac{n(n+1)}{2}$ pages ($1+2+3+...+n$). Now, the number of ways that we can land in the same chapter twice is $1^2+2^2+3^2+...+n^2$, since each chapter has $i$ pages that we could have landed in each time. This can be simplified as: $1^2+2^2+3^2+...+n^2 = \frac{n(n+1)(2n+1)}{6}$. The total number of ways to open the book twice is just $(\frac{n(n+1)}{2})^2$, since we can land on any page, then any page again. So $p = \frac{n(n+1)(2n+1)}{6}/(\frac{n(n+1)}{2})^2 = \frac{(2n+1)}{3}/(\frac{n(n+1)}{2})=\frac{2(2n+1)}{3n(n+1)}$. Since $n(n+1)$ is always divisible by 2, the 2 on the top will cancel. Now, we seek $n$ such that $2n+1$ will cancel i.e. since $2n+1$ is odd, we seek $n$ with $2n+1\:|\: 3n(n+1)$.
+\begin{align*}
+2n+1\:&|\: 3n^2+3n\\
+2n+1\:&|\: 2(3n^2+3n)-3n(2n+1) = 3n\\
+2n+1\:&|\: 2(3n)-3(2n+1)\\
+2n+1\:&|\: -3\\
+\end{align*}
+Finally, we get $2n+1=1,3,-1,-3$ which gives $n=0,1,-1,-2$, none of which are valid numbers of chapters. So there is no $n>1$ giving $p=\frac{1}{k}$.
+
 
 \item % Ireland Book 2018 P1 (the Green one)
 {\itshape Points $D$, $E$, and $F$ lie respectively on sides $BC$, $CA$, and $AB$ of triangle $ABC$ such that $BDEF$ is a parallelogram. Prove that the area of $BDEF$ is maximal when $D$, $E$, and $F$ are the midpoints of the sides.}
