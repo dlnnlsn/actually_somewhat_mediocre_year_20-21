@@ -49,6 +49,30 @@ a^2 + b^2 + c^2 &= (a + b + c)^2 - 2ab -2bc -2c\\
 The probability of opening the book in the same chapter twice in a row is $p$.
 Is it possible for $p$ to be $1/k$ for some integer $k$?}
 
+We note that the book contains
+\[
+  1 + 2 + 3 + \dotsb + n = \frac{n(n + 1)}{2}  
+\]
+pages.
+
+To calculate the probability of opening the book in the same chapter twice, we count the number of ways to open it in the same chapter twice, and divide this by the total number of outcomes for opening the book twice.
+
+Suppose that we initially open the book in chapter $i$. Then there are $i$ options for which page we initially opened it on, and there are $i$ ways to open it a second time in the same chapter. The total number of ways of opening it in chapter $i$ twice is thus $i^2$, and so the total number of ways of opening it in the same chapter twice is
+\[
+  1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n + 1)(2n + 1)}{6}.
+\]
+
+We see that the probability of opening it in the same chapter twice is
+\[
+  \frac{n(n + 1)(2n + 1)/6}{(n(n + 1)/2)^2} = \frac{4(2n + 1)}{6n(n + 1)}
+\]
+
+For this to be equal to $1/k$, we require
+\[
+  \frac{2(2n + 1)}{3n(n + 1)} = \frac{1}{k}.
+\]
+Since $2n + 1$ is relatively prime to both $n$ and $n + 1$, this would require that $2n + 1 \mid 3$. (We need the $2n + 1$ in the numerator to ``cancel''.) It then follows that $n = 1$, and so it is only possible for the probability to be of the form $\frac{1}{k}$ if the book has only one chapter.
+
 
 \item % Ireland Book 2018 P1 (the Green one)
 {\itshape Points $D$, $E$, and $F$ lie respectively on sides $BC$, $CA$, and $AB$ of triangle $ABC$ such that $BDEF$ is a parallelogram. Prove that the area of $BDEF$ is maximal when $D$, $E$, and $F$ are the midpoints of the sides.}
