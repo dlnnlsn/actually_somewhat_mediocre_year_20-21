@@ -27,6 +27,16 @@
 \item % Ireland 2017 P4
 {\itshape Find the smallest positive integer which only has $1$ and $2$ as digits and which is divisible by $99$.}
 
+Let this smallest positive integer be $N$. Note that $99 \mid N \iff 11 \mid N  \textrm{ and } 9 \mid N$. \par
+Using the divisibility rules, we know that $9 \mid N$ means that the sum of the digits of $N$ will be a multiple of 9 
+and that $11 \mid N$ means that the sum of every second digit minus the sum of every other digit will be a multiple of 11.
+Let $A$ be the sum of every second digit and $B$ the sum of every other digit. \par
+If the sum of $N$'s digits is equal to 9, we will have that $A + B = 9$ and either $A$ will be odd and $B$ even, or vice versa.
+Since we have that $11 \mid A - B$ and $A + B = 9 < 11 \implies \mid A - B\mid = 0$ which is impossible since $A$ and $B$ have different parity. \par
+Next we have the case of the sum of $N$'s digits being equal to 18 (the next multiple of 9). To minimise the number of digits we can make as many digits as possible equal to 2.
+This would make the smallest option $N = 222222222$, however this would not be divisible by 11, as $\mid A - B\mid = 2$.
+The next smallest possible option would $N = 1122222222$. Note that we place the 1's at the front of number to minimise the number.
+In this case, the number would be divisible by 11 which would make $N = 1122222222$ the solution. 
 
 \item % Tim
 {\itshape ${\Gamma}$ is a circle and ${AB}$ and ${CD}$ are ${\perp}$ chords that intersect inside ${\Gamma}$. ${P}$ is on ${\Gamma}$, with ${Q}$ diametrically opposite to ${P}$. Let the feet of the perpendiculars from ${P}$ to ${AB}$ and ${CD}$ be ${P'}$ and ${P''}$ respectively, and the feet of the perpendiculars from ${Q}$ to ${AB}$ and ${CD}$ be ${Q'}$ and ${Q''}$ respectively. Show that: $${ (P'P)^2+(P''P)^2+(Q'Q)^2+(Q''Q)^2 < d^2}$$ where ${d}$ is the diameter of ${\Gamma}$.}
@@ -49,29 +59,14 @@ a^2 + b^2 + c^2 &= (a + b + c)^2 - 2ab -2bc -2c\\
 The probability of opening the book in the same chapter twice in a row is $p$.
 Is it possible for $p$ to be $1/k$ for some integer $k$?}
 
-We note that the book contains
-\[
-  1 + 2 + 3 + \dotsb + n = \frac{n(n + 1)}{2}  
-\]
-pages.
-
-To calculate the probability of opening the book in the same chapter twice, we count the number of ways to open it in the same chapter twice, and divide this by the total number of outcomes for opening the book twice.
-
-Suppose that we initially open the book in chapter $i$. Then there are $i$ options for which page we initially opened it on, and there are $i$ ways to open it a second time in the same chapter. The total number of ways of opening it in chapter $i$ twice is thus $i^2$, and so the total number of ways of opening it in the same chapter twice is
-\[
-  1^2 + 2^2 + 3^2 + \dotsb + n^2 = \frac{n(n + 1)(2n + 1)}{6}.
-\]
-
-We see that the probability of opening it in the same chapter twice is
-\[
-  \frac{n(n + 1)(2n + 1)/6}{(n(n + 1)/2)^2} = \frac{4(2n + 1)}{6n(n + 1)}
-\]
-
-For this to be equal to $1/k$, we require
-\[
-  \frac{2(2n + 1)}{3n(n + 1)} = \frac{1}{k}.
-\]
-Since $2n + 1$ is relatively prime to both $n$ and $n + 1$, this would require that $2n + 1 \mid 3$. (We need the $2n + 1$ in the numerator to ``cancel''.) It then follows that $n = 1$, and so it is only possible for the probability to be of the form $\frac{1}{k}$ if the book has only one chapter.
+Notice that the book has $\frac{n(n+1)}{2}$ pages ($1+2+3+...+n$). Now, the number of ways that we can land in the same chapter twice is $1^2+2^2+3^2+...+n^2$, since each chapter has $i$ pages that we could have landed in each time. This can be simplified as: $1^2+2^2+3^2+...+n^2 = \frac{n(n+1)(2n+1)}{6}$. The total number of ways to open the book twice is just $(\frac{n(n+1)}{2})^2$, since we can land on any page, then any page again. So $p = \frac{n(n+1)(2n+1)}{6}/(\frac{n(n+1)}{2})^2 = \frac{(2n+1)}{3}/(\frac{n(n+1)}{2})=\frac{2(2n+1)}{3n(n+1)}$. Since $n(n+1)$ is always divisible by 2, the 2 on the top will cancel. Now, we seek $n$ such that $2n+1$ will cancel i.e. since $2n+1$ is odd, we seek $n$ with $2n+1\:|\: 3n(n+1)$.
+\begin{align*}
+2n+1\:&|\: 3n^2+3n\\
+2n+1\:&|\: 2(3n^2+3n)-3n(2n+1) = 3n\\
+2n+1\:&|\: 2(3n)-3(2n+1)\\
+2n+1\:&|\: -3\\
+\end{align*}
+Finally, we get $2n+1=1,3,-1,-3$ which gives $n=0,1,-1,-2$, none of which are valid numbers of chapters. So there is no $n>1$ giving $p=\frac{1}{k}$.
 
 
 \item % Ireland Book 2018 P1 (the Green one)
