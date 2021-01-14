@@ -74,6 +74,28 @@ R&&\\
 $$a + b - c = 14$$
 $$a^2 + b^2 - c^2 = 14.$$}
 
+Rearranging the first equation, we have $c = a + b - 14$. We can substitute this into the second equation to get 
+\begin{align*}
+  a^2 + b^2 - c^2 &= 14 \\
+  \implies a^2 + b^2 - (a + b - 14)^2 &= 14 \\
+  \implies -2ab + 28a + 28b - 196 &= 14 \\
+  \implies ab - 14a - 14 b + 98 &= -7 \\
+  \implies (a - 14)(b - 14) - 98 &= -7 \\
+  \implies (a - 14)(b - 14) &= 91 = 7 \cdot 13
+\end{align*}
+If $a$ and $b$ are integers, then so are $a - 14$ and $b - 14$. So we have that $a - 14$ and $b - 14$ must simply be the paired factors of $91$. We can not check every case 
+\begin{align*}
+  (a - 14, b - 14) &= (91, 1) \implies (a, b) = (105, 15) \\
+  &= (13, 7) \implies (a, b) = (27, 21) \\
+  &= (-13, -7) \implies (a, b) = (1, 7) \\
+  &= (-91, -1) \implies (a, b) = (-77, 13)
+\end{align*}
+Notice that swapping $a$ and $b$ will produce more solutions which are just the same as the ones already generated, but also swapped. If we know $a$ and $b$, we can find $c$. Hence, using the condition that $a$, $b$, $c \in \mathbb{N}$, the only solutions are
+\begin{align*}
+  (a, b, c) &= (105, 15, 106) \\
+  &= (27, 21, 34) \\
+\end{align*}
+where $a$ and $b$ may also be swapped in each triple.
 
 \item % ELMO 2013 Shortlist C3
 {\itshape You are given nine real numbers, $a_1$, $a_2$, $\cdots$, $a_9$ with an average of $m$. What is the minimum possible number of triples $(i, j, k)$ with $1 \le i < j < k \le 9$ and $a_i + a_j + a_k \ge 3m$?}
