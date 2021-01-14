@@ -35,6 +35,20 @@ Check for $f(x) = mx$:$$LHS = xf(y) = xmy = mxy$$ $$RHS = yf(x) = ymx = mxy$$ $L
 \item % Croatia 2017 2nd round 3.2
 {\itshape Find all positive integers $m$ such that $2^{m^2}-4$ is divisible by $7$.}
 
+We want to find $m$ such that $2^{m^2}\equiv _{7} 4$. 
+The possible remainders when $2^k$ is divided by 7 where $k$ is a natural number will be as follows:
+\begin{align*} 
+2^1 = 2 \equiv _{7} 2\\
+2^2 = 4 \equiv _{7} 4\\
+2^3 = 8 \equiv _{7} 1\\
+2^4 = 16 \equiv _{7} 2\\
+2^5 = 32 \equiv _{7} 4\\
+2^6 = 64 \equiv _{7} 1
+\end{align*}
+This pattern will continue and we will see that $2^k$ mod 7 will be one of 1, 2, or 4. 
+We also note that $2^k \equiv _{7} 4$ when $k \equiv _{3} 2$. 
+If $k = m^2$ we have that $m^2 \equiv _{3} 2$. However, a perfect square cannot leave a remainder of 2 when divided by 3 which means that there will be no solutions for m.
+
 
 \item % Croatia 2017 2nd round 2.4
 {\itshape Consider a triangle $ABC$ with circumcentre $O$.
