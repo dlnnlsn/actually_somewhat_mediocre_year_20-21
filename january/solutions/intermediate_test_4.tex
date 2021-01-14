@@ -5,7 +5,7 @@
 \usepackage{fullpage}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
-
+\usepackage{booktabs}
 
 \begin{document}
 \thispagestyle{empty}
@@ -47,6 +47,44 @@ Show that $A$, $B$, $D$, and $E$ are concyclic.}
 Hyperrooks can move along any direction parallel to an edge of the cube (like a normal rook, but also up and down).
 What is the maximum number of hyperrooks you can place in the chess cube without any of them attacking each other?}
 
+First we prove that 9 hyperrooks is the maximum amount of hyperrooks you can place on a chess cube. Consider the 9 columns (in the up-down direction) of the chess cube. If a column contains 2 hyperrooks, the hyperrooks would attack each other. Therefore, each column has at most 1 hyperrook. Since there are 9 columns, there are at most 9 hyperrooks. We show that placing 9 hyperrooks is possible by construction.
+
+Construction for 9 rooks:
+\begin{table}[h]
+\centering
+\begin{tabular}{| c | c| c |}
+\multicolumn{3}{c}{Top layer}\\
+\hline
+R& &\\
+\hline
+&R&\\
+\hline
+&&R\\
+\hline
+\end{tabular}
+\quad
+\begin{tabular}{| c | c| c |}
+\multicolumn{3}{c}{Middle layer}\\
+\hline
+&R &\\
+\hline
+&&R\\
+\hline
+R&&\\
+\hline
+\end{tabular}
+\quad
+\begin{tabular}{| c | c| c |}
+\multicolumn{3}{c}{Bottom layer}\\
+\hline
+& &R\\
+\hline
+R&&\\
+\hline
+&R&\\
+\hline
+\end{tabular}
+\end{table}
 
 \item % Sharp Maths Competition, Easter Egg for Liam
 {\itshape Find all positive integers $a$, $b$ and $c$ satisfying 
