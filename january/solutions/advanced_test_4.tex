@@ -88,7 +88,9 @@ $$a^2 + b^2 - c^2 = 14.$$}
 $$f(xy) = \max\{f(x + y), f(x)f(y)\} $$
 for all $x$, $y \in \mathbb{R}$.}
 
-Substituting $(x, y) = (0, 0)$, we get $f(0) = \max\{f(0), f(0)^2\}$, so we must have $f(0) \ge f(0)^2 \implies f(0) \in [0, 1]$. Now we substitute $(x, y) = (x, 0)$ giving $f(0) = \max\{f(x), f(x)f(0)\}$. Lastly, substituting $(x, y) = (x, -x)$, we get $f(-x^2) = \max\{f(0), f(x)f(-x)\}$. If we let $f(0) = a$, then these three identities read as follows
+Substituting $(x, y) = (0, 0)$, we get $f(0) = \max\{f(0), f(0)^2\}$, so we must have 
+$$f(0) \ge f(0)^2 \implies f(0) \in [0, 1]$$ 
+Now we substitute $(x, y) = (x, 0)$ giving $f(0) = \max\{f(x), f(x)f(0)\}$. Lastly, substituting $(x, y) = (x, -x)$, we get $f(-x^2) = \max\{f(0), f(x)f(-x)\}$. If we let $f(0) = a$, then these three identities read as follows
 \begin{align}
 a &\in [0, 1] \label{a-cond}\\
 a &= \max\{f(x), af(x)\} \label{f-cond}\\
@@ -97,13 +99,15 @@ f(-x^2) &= \max\{a, f(x)f(-x)\} \label{square-cond}
 Identity (\ref{a-cond}) with (\ref{f-cond}) tells us that if $f(k) \ge 0$, then $f(k) \ge af(k)$, so $f(k) = a$. We shall now consider two separate cases:
 \begin{itemize}
   \item Case 1: $a = 0$ \\
-  Identity (\ref{f-cond}) gives $0 = \max\{f(x), 0\} \; \forall x \in \mathbb{R} \implies f(x) \le 0 \; \forall x \in \mathbb{R}$. Identity (\ref{square-cond}) gives $f(-x^2) = 0$ and $f(x)f(-x) \le 0$. Thus, for $k \le 0$, we must have $f(k) = 0$. Consider now the substitution $(x,y) = (x, -1)$; we get $f(-x) = \max\{f(x - 1), f(x)f(-1)\} = \max\{f(x - 1), 0\} = 0 \; \forall x \in \mathbb{R}$ so in particular we then have $f(x) = 0 \; \forall x \in \mathbb{R}$.
+  Identity (\ref{f-cond}) gives $0 = \max\{f(x), 0\} \; \forall x \in \mathbb{R} \implies f(x) \le 0 \; \forall x \in \mathbb{R}$. Identity (\ref{square-cond}) gives $f(-x^2) = 0$ and $f(x)f(-x) \le 0$. Thus, for $k \le 0$, we must have $f(k) = 0$. Consider now the substitution $(x,y) = (x, -1)$; we get 
+  $$f(-x) = \max\{f(x - 1), f(x)f(-1)\} = \max\{f(x - 1), 0\} = 0 \; \forall x \in \mathbb{R}$$ 
+  so in particular we then have $f(x) = 0 \; \forall x \in \mathbb{R}$.
   \item Case 2: $a \in (0, 1]$ \\
   Suppose $f(k) \le 0$. We must then have $f(k) \le af(k) \implies af(k) = a$ by Identity (\ref{f-cond}). Solving this we get 
   $$a(f(k) - 1) = 0 $$
-  So either $a = 0$ or $f(k) = 1$. The assumption in this case was that $a > 0$ and $f(k) < 0$, so we have found a contradiction. Hence there cannot be any $k \in mathbb{R}$ such that $f(k) \le 0$. This means that $f(x) \ge 0 \; \forall x \in \mathbb{R}$, but we already have shown that this gives $f(x) = a \forall x \in \mathbb{R}$.
+  So either $a = 0$ or $f(k) = 1$. The assumption in this case was that $a > 0$ and $f(k) \le 0$, so we have found a contradiction. Hence there cannot be any $k \in \mathbb{R}$ such that $f(k) \le 0$. This means that $f(x) > 0 \; \forall x \in \mathbb{R}$, but we already have shown that this must give $f(x) = a \; \forall x \in \mathbb{R}$.
 \end{itemize}
-In summary: $f(0) = 0 \implies f(x) = 0 \forall x \in \mathbb{R}$ and $f(0) = a \in (0, 1] \implies f(x) = a \forall x \in \mathbb{R}$. Hence we can write this concisely as $f(x) = a \; \forall x \in \mathbb{R}$ where $a \in [0, 1]$.
+In summary: $f(0) = 0 \implies f(x) = 0 \; \forall x \in \mathbb{R}$ and $f(0) = a \in (0, 1] \implies f(x) = a \; \forall x \in \mathbb{R}$. Hence we can write this concisely as $f(x) = a \; \forall x \in \mathbb{R}$ where $a \in [0, 1]$.
 
 Check:
 \begin{align*}
