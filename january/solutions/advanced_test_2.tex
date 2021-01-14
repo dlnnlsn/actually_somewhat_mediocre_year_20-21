@@ -4,6 +4,21 @@
 \usepackage{enumerate}
 \usepackage{fullpage}
 \usepackage{fancyvrb}
+\usepackage{tikz}
+\usepackage{subcaption}
+
+\newcommand{\drawgrid}[3]{%
+  \begin{tikzpicture}
+    \draw[step=1] (0, 0) grid (#1, -#2);
+    \foreach[count=\y] \row in #3 {
+      \foreach[count=\x] \cell in \row {
+        \ifnum \cell=1
+          \fill[black] (\x-1, -\y+1) rectangle +(1, -1);
+        \fi
+      }
+    }
+  \end{tikzpicture}
+}
 
 
 \begin{document}
@@ -71,8 +86,45 @@
   \item % APMO 2007
   {\itshape Let $K$ be a set of nine different positive integers which only have $2027$ and $2029$ as prime factors.
   Show that there are three distinct integers $a$, $b$, and $c$ in $K$ such that $\sqrt[3]{abc}$ is an integer.}
+
+  Without loss of generality, we may assume that $K$ contains only positive integers. Let
+  \[
+    K = \left\{ 2027^{a_i} \cdot 2029^{b_i} \middle| a_i, b_i \in \mathbb{Z}, a_i, a_i \geq 0, 1 \leq i \leq 9 \right\}.
+  \]
+  It suffices to show that there are $1 \leq i_1, i_2, i_3 \leq 9$ such that
+  \[
+    a_{i_1} + a_{i_2} + a_{i_3} \equiv b_{i_1} + b_{i_2} + b_{i_3} \equiv 0 \pmod 3.  
+  \]
+
+  Consider a $3 \times 3$ grid with rows and columns numbered from $0$ to $2$. We say that three cells in the grid are \emph{on a line} if all three are in the same row, or all three are in the same column, or if all three are simultaneously in different rows and different columns. In other words, if they are on a physical line in the grid if we consider the grid to wrap around from the bottom to the top, and from the right to the left.
   
+  For $n = 2027^a \cdot 2029^b \in K$, place $n$ in row $(a \bmod 3)$ and column $(b \bmod 3)$.
+
+  We see that the product of three numbers in $K$ is a cube if and only if they are on a line in the grid, or are in the same cell in the grid.
+
+  If three numbers are in the same cell, we are done. Suppose that every cell contains at most two numbers. Then by the pigeonhole principle, there are at least five non-empty cells in the grid. (If each number were in one of at most four cells, and there are $9$ numbers, then the pigeonhole principle would give us three numbers in the same cell.)
+
+  If three of these non-empty cells are in the same row, then we are done. So suppose that each row contains at most two non-empty cells. Then we see that there are at least two rows containing precisely two non-empty cells.
+
+  If three cells are on a line in the grid, then we see that they are still on a line if we swap two of the rows, or if we swap two of the columns. We can thus swap the rows so that the top two rows contain two non-empty cells, and the leftmost two cells in the top row are non-empty. Without loss of generality, we are therefore in one of the following three cases:
+  \begin{figure}[!h]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \drawgrid{3}{3}{{{1, 1, 0}, {1, 1, 0}, {0, 0, 0}}}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \drawgrid{3}{3}{{{1, 1, 0}, {1, 0, 1}, {0, 0, 0}}}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+      \centering
+      \drawgrid{3}{3}{{{1, 1, 0}, {0, 1, 1}, {0, 0, 0}}}
+    \end{subfigure}
+  \end{figure}
   
+  In each case, we see that every way of placing a fifth non-empty square in the grid results in three squares that are on a line.
+
   \item % Romania TST 2011, P12
   {\itshape Prove that there are infinitely many $n \in \mathbb{N}$ such that there exists a $d \in \mathbb{N}$ with both $d$ and $d + n$ being factors of $n^2 + 1$.}
   
