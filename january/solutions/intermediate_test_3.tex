@@ -41,6 +41,14 @@ In this case, the number would be divisible by 11 which would make $N = 11222222
 \item % Tim
 {\itshape ${\Gamma}$ is a circle and ${AB}$ and ${CD}$ are ${\perp}$ chords that intersect inside ${\Gamma}$. ${P}$ is on ${\Gamma}$, with ${Q}$ diametrically opposite to ${P}$. Let the feet of the perpendiculars from ${P}$ to ${AB}$ and ${CD}$ be ${P'}$ and ${P''}$ respectively, and the feet of the perpendiculars from ${Q}$ to ${AB}$ and ${CD}$ be ${Q'}$ and ${Q''}$ respectively. Show that: $${ (P'P)^2+(P''P)^2+(Q'Q)^2+(Q''Q)^2 < d^2}$$ where ${d}$ is the diameter of ${\Gamma}$.}
 
+Let $AB$ and $CD$ intersect at X. By Pythagoras $(P'P)^2 + (P''P)^2 = (P'P'')^2$. Notice $PP'XP''$ forms a rectangle. The length of the diagonals of a rectangle are equal, so $(P'P'')^2 = (PX)^2$. Similar arguments give $(Q'Q)^2 + (Q''Q)^2 = (QX)^2$.
+
+We consider $\triangle PXQ$. Notice $\angle PXQ > 90$°, because $X$ is in the circle and $PQ$ is a diameter. Hence $\triangle PXQ$ is obtuse. We claim it well known that in an obtuse triangle with $\angle PXQ$ being the obtuse angle that $(PX)^2 + (QX)^2 < (PQ)^2$. For a formal proof of this we look at cos-law $$(PQ)^2 = (PX)^2 + (QX)^2 - 2(PX)(QX)\cos \angle PXQ$$ 
+
+since $\angle PXQ > 90$°, $-2(PX)(QX)\cos \angle PXQ > 0$ and the inequality follows.
+
+We end by putting everything together $$(P'P)^2+(P''P)^2+(Q'Q)^2+(Q''Q)^2 = (PX)^2 + (QX)^2 < (PQ)^2 = d^2$$ 
+
 \item % Taariq
 {\itshape Let $q(x) = x^3 -x^2 -2x +1$ with roots $a$, $b$, and $c$.
 Find $a^2 +b^2 + c^2$.}
