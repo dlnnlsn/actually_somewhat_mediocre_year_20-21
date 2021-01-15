@@ -5,6 +5,9 @@
 \usepackage{fullpage}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
+\usepackage{amsthm}
+
+\newtheorem*{lemma}{Lemma}
 
 
 \begin{document}
@@ -53,6 +56,35 @@ Prove that $BP$ bisects $\angle APQ$ and $BQ$ bisects $\angle AQP$.}
 \vspace{24pt}
 \item % French Number Theory Training Assignment
 {\itshape Let $n$ be a positive integer. Show that there is a positive integer $m$ such that $\varphi(m) = n!$, where $\varphi$ denotes the Euler phi function.}
+
+Call a natural number $n$ \emph{sufficiently factorial-like} if whenever $p_1, p_2, \dots, p_k$ are distinct prime factors of $n$, we have that $(p_1 - 1)(p_2 - 1) \dotsb (p_k - 1) \mid n$. Note that $n!$ is always sufficiently factorial-like.
+
+We will prove the following result, of which the current problem is a special case:
+\begin{lemma}
+	Suppose that $n$ is sufficiently factorial-like. Then there is a natural number $m$ such that $\varphi(m) = n$, and such that if $p$ is any prime that divides $m$, then $p$ divides $n$.
+\end{lemma}
+\begin{proof}
+	We proceed by strong induction. We note that $1$ is sufficiently factorial-like, and that $\phi(1) = 1$.
+
+	Suppose that $n$ is sufficiently factorial-like, and that for all sufficiently factorial-like natural numbers $a < n$, there is a natural number $b$ such that $\varphi(b) = a$ where all of the prime divisors of $b$ are also prime divisors of $a$. We will construct a natural number $m$ such that $\varphi(m) = n$ and such that all of the prime divisors of $m$ are also prime divisors of $n$.
+
+	Let $p$ be the largest prime number that divides $n$, and let $p^k$ be the largest power of $p$ that divides $n$. Let $a = \dfrac{n}{p^k(p - 1)}$. Clearly $a < n$. We claim that $a$ is sufficiently factorial-like.
+
+	Suppose that $p_1, p_2, \dots, p_k$ be distinct prime factors of $a$. Then $p_1, p_2, \dots, p_k, p$ are distinct prime factors of $n$, and so since $n$ is sufficiently factorial-like, we have that
+	\[
+		(p_1 - 1)(p_2 - 1) \dotsb (p_k - 1)(p - 1) \mid n = p^k(p - 1) a.
+	\]
+	Since $p$ was the largest prime factor of $n$, we have that $p \geq p_i > p_i - 1$ for each $i$, and so $p$ does not divide $p_i - 1$. It follows that
+	\[
+		\gcd((p_1 - 1)(p_2 - 1) \dotsb (p_k - 1), p^k) = 1,
+	\]
+	and so we have that $(p_1 - 1)(p_2 - 1) \dotsb (p_k - 1)$ divides $a$ by Euclid's Lemma. We see that $a$ is indeed sufficiently factorial-like. By the induction hypothesis, there is a natural number $b$ such that $\varphi(b) = a$, and such that all of the prime factors of $b$ are prime factors of $a$. This implies that $p$ is not a prime factor of $b$, and so the numbers $p^{k + 1}$ and $b$ are relatively prime. Let $m = p^{k + 1} b$. Then
+	\[
+		\varphi(m) = \varphi\left(p^{k + 1} b\right) = \varphi\left(p^{k + 1}\right) \varphi(b) = p^k (p - 1) a = n.
+	\]
+
+	Since all of the prime factors of $m$ are also factors of $n$ (they are either $p$, which is a factor of $n$, or a prime factor of $b$, thus a factor of $a$, thus a factor of $n$) we see that the desired result holds true for $n$ as well. By the principle of strong mathematical induction, we have that the lemma is true for all sufficiently factorial-like natural numbers $n$.
+\end{proof}
 
 
 \vspace{24pt}
