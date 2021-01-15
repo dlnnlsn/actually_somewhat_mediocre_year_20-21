@@ -43,10 +43,27 @@ What is the minimum number of goals scored in this competition?}
   \item $a_n > n$ for all $n$.
 \end{enumerate}}
 
+\begin{enumerate}[a)]
+  \item We shall first prove that $a_n < a_1 \cdot a_{n - 1}$. We shall do this by induction.
+  \begin{itemize}
+    \item Induction Hypothesis: $a_n < a_1 \cdot a_{n - 1}$ for all $n > 1$.
+    \item Base Case: $n = 2$. We have $a_{1}^2 > a_{1 - 1}a_{1 + 1} = a_0a_2 = a_2$. Therefore $a_2 < a_1 \cdot a_{2 - 1}$ so the base case holds.
+    \item Assume true for $n = k$.
+    \item Prove true for $n = k + 1$. We have that $a_k < a_1 \cdot a_{k - 1} \implies a_k \cdot a_{k + 1} < a_1 \cdot a_{k - 1} \cdot a_{k + 1} < a_1 \cdot a_k^2$. Simplifying this gives $a_{k + 1} < a_1 \cdot a_k$ which is exactly what we wanted to show in the inductive step.
+  \end{itemize}
+  Hence, by the Principle of Mathematical Induction, we have $a_n < a_1 \cdot a_{n - 1}$ for all $n > 1$. Now we simply note that this gives 
+  $$a_n < a_1 \cdot a_{n - 1} < a_1 \cdot a_1 \cdot a_{n - 2} < \cdot < a_1^n \cdot a_0 = a_1^n.$$
+  \item We shall prove that $a_n > a_{n - 1}$. Suppose for contradiction that there exists some $k$ such that $a_k \le a_{k - 1}$. From this we get $a_k \cdot a_{k + 1} \le a_{k - 1} \cdot a_{k + 1} < a_k^2 \implies a_{k + 1} < a_k$. Now one can prove by induction that if there exists some $k$ such that $a_k \le a_{k - 1}$, then the rest of the sequence must be strictly decreasing. However, since the sequence is defined on positive integers, we eventually cannot decrease further. Hence we have a contradiction, so there cannot be a $k$ such that $a_k \le a_{k - 1}$. Hence $a_n > a_{n - 1}$ for all $n$. So we must then have that $a_n > a_1 + {n - 1} = n$.
+\end{enumerate}
 
 \item % ELMO 2013 Shortlist, C8
 {\itshape There are $20$ people at a party. Each person holds some number of coins. Every minute, each person who has at least $19$ coins simultaneously gives one coin to every other person at the party. What is the smallest number of coins that could be at the party such that at least one coin is given out in every minute?}
 
+Notice that the construction $(0, 1, \cdots, 19)$ satisfies the condition that the coin sharing never stops. It uses $180$ coins. We shall prove that $180$ is indeed the minimum.
+
+Suppose person $i$ hands out some of their coins. They hand one coin to each person, so we can label each coin that was handed out as $(i, j)$ to denote that person $i$ gave that coin to person $j$. Now, if person $j$ ever hands out coins, we shall say that they must give person $i$ the coin $(i, j)$ back to person $j$. Such a coin must exist since the assumption is $i$ gave a coin to $j$ and $j$ has not handed out coins since. If the coin sharing does not stop, then each person must eventually hand out coins themselves. Thus we must eventually have that every coin with pair $(i, j)$ and $i \ne j$ must be present at the party. Thus, the lower bound on the number of coins is 
+$$\binom{20}{2} = 190$$
+Since we have a construction for when it is exactly $190$, we have found the minimum.
 
 \item % 
 {\itshape Given a function $f: \mathbb{Q} \rightarrow \mathbb{Q}$ satisfying
