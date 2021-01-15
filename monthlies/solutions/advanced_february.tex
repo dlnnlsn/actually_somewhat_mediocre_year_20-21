@@ -31,6 +31,21 @@ We thus see that among the first $30000$ positive integers, there are $22000$ th
 \item % Ireland 2018 Q9
 {\itshape Suppose $a,b,c > 0$ and $\sqrt{a-b} +\sqrt{a-c} > \sqrt{b+c}$. Prove that $a > \dfrac{3}{4} (b+c)$.}
 
+Suppose that $a \leq \dfrac{3}{4} (b + c)$. We will show that $\sqrt{a-b} +\sqrt{a-c} \leq \sqrt{b+c}$. Since $a \leq \dfrac{3}{4} (b + c)$, we have that
+\[
+	\sqrt{a-b} +\sqrt{a-c} \leq \sqrt{\frac{3}{4}(b + c) - b} + \sqrt{\frac{3}{4}(b + c) - c} = \frac{1}{2} \left(\sqrt{3c - b} + \sqrt{3b - c}\right).
+\]
+
+Now
+\begin{align*}
+	& \dfrac{1}{2} \left(\sqrt{3c - b} + \sqrt{3b - c}\right)  \leq \sqrt{b + c} \\
+	\iff & (3c - b) + (3b - c) + 2\sqrt{(3c - b)(3b - c)}  \leq 4(b + c) \\
+	\iff & (3c - b)(3b - c) \leq (b + c)^2 \\
+	\iff & 10bc - 3b^2 - 3c^2 \leq b^2 + 2bc + c^2 \\
+	\iff & 4(b - c)^2 \geq 0
+\end{align*}
+and so we are done.
+
 
 \vspace{24pt}
 \item % NH-2006-1
