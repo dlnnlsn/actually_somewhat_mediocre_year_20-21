@@ -22,6 +22,10 @@
 \item % DB-2014-1
 {\itshape Prove that among the first $30000$ positive integers there are at least $22000$ composite numbers.}
 
+Among the first $30000$ positive integers, there are $\frac{30000}{2} = 15000$ multiples of $2$, $10000$ multiples of $3$, and $6000$ multiples of $5$. There are then at most $15000 + 10000 + 6000 = 31000$ multiples of $2$, $3$, or $5$. But this counts each multiples of $6$, $10$, and $15$ twice, so we subtract the $5000 + 3000 + 2000 = 10000$ multiples of $6$, $10$, or $15$ to arrive at at least $31000 - 10000 = 21000$ multiples of $2$, $3$, or $5$. But now we have added each multiple of $30$ twice, but subtracted them $3$ times, so we add $\frac{30000}{30} = 1000$ to account for the multiples of $30$.
+
+We thus see that among the first $30000$ positive integers, there are $22000$ that are a multiple of $2$, $3$, or $5$. These are all composite except for $2$, $3$, or $5$ themselves, so we need only find $3$ more composite numbers below $30000$ that are not divisible by any of these. The numbers $49$, $77$, and $121$ will do.
+
 
 \vspace{24pt}
 \item % Ireland 2018 Q9
