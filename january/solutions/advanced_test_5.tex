@@ -58,6 +58,41 @@ What is the minimum number of goals scored in this competition?}
 \end{enumerate}
 Find all possible rational values of $x$ such that $f(x) = 2021$.}
 
+By taking $n = 2$ in condition ii, we find that $f(x + 2) = 2f(x + 1) - f(x)$ for all rational numbers $x$. This allows us to prove by induction that $f(n) = n + 2$ for all integers $n$. Indeed, we have that $f(0) = 0 + 2$ and $f(1) = 1 + 2$ by condition i, so the base case is true. Suppose that $f(n) = n + 2$ and $f(n + 1) = n + 3$ for some integer $n$. Then $f(n + 2) = 2f(n + 1) - f(n) = 2(n + 3) - (n + 2) = n + 4$, so the claim is also true for $n + 2$. It follows by mathematical induction that $f(n) = n + 2$ for all non-negative integers $n$. A similar proof works to show that this is true for negative integers as well.
+
+We now show by strong induction on the denominator $q$ that for all natural numbers $q$ and all integers $p$ with $\gcd(p, q) = 1$, we have that $f\left(\frac{p}{q}\right) = pq + 2$. This is true for $q = 1$ since we have already seen that $f(n) = n + 2$ for all integers $n$. Suppose that for all $0 < k < q$, we have that $f\left(\frac{n}{k}\right) = nk + 2$ whenever $n$ and $k$ are relatively prime. We will show that the same is true of $q$.
+
+First, suppose that $\gcd(n, q) = 1$, and $0 < n < q$. Then by the induction hypothesis, we have that $f\left(\frac{q}{n}\right) = qn + 2$, and so by condition iii, we have that $f\left(\frac{n}{q}\right) = qn + 2$ as well.
+
+We now show that for $0 < n < q$ such that $\gcd(n, q) = 1$, we have that $f\left(\frac{n}{q} + 1\right) = q^2 + nq + 2$. Indeed,
+\begin{align*}
+  f\left(\frac{n}{q} + 1\right) & = 2f\left(\frac{n}{q}\right) - f\left(\frac{n}{q} - 1\right) \\
+  & = 2(nq + 2) - f\left(-\frac{q - n}{q}\right) \\
+  & = 2(nq + 2) - f\left(\frac{-q}{q - n}\right) \\
+  & = 2(nq + 2) - (-q^2 + nq + 2) = q^2 + nq + 2,
+\end{align*}
+where the antepenultimate equality follows from condition iii, and the penultimate equality follows by the induction hypothesis since $q - n$ is positive and smaller than $q$.
+
+It follows by condition ii that
+\begin{align*}
+  f\left(\frac{mq + n}{q}\right) & = f\left(\frac{n}{q} + m\right) \\
+  & = f\left(\frac{n}{q}\right) + m\left(f\left(\frac{n}{q} + 1\right) - f\left(\frac{n}{q}\right)\right) \\
+  & = qn + 2 + m(q^2 + qn + 2 - qn - 2) = q(mq + n) + 2
+\end{align*}
+for all integers $m$ and all positive integers $n$ such that $n < q$ and $\gcd(n, q) = 1$.
+
+Since every integer $k$ that is relatively prime to $q$ can be written as $k = mq + n$ where $0 < n < q$ and $\gcd(n, q) = 1$, we see that our claim holds for $q$ as well. Thus the claim holds for every positive integer $q$ by the principle of strong mathematical induction.
+
+Finally, if $\frac{p}{q}$ is a rational number in its lowest terms (where we may assume that $q$ is positive), we have that
+\[
+  f\left(\frac{p}{q}\right) = 2021 \iff pq + 2 = 2021 \iff pq = 2019.
+\]
+The factors of $2019$ are $1, 3, 673$, and $2019$, so we see that the complete set of solutions is
+\[
+  \left\{ \frac{1}{2019}, \frac{3}{673}, \frac{673}{3}, 2019 \right\}.
+\]
+
+
 \item % Turkic TST 2008, Q1
 {\itshape Let $\triangle ABC$ have $ \angle B>\angle C$. The internal angle bisector of $A$ intersects $BC$ at $D$ and the external angle bisector of $A$ intersect $BC$ at $E$. $ P$ is a variable point on $ EA$ such that $ A$ is on $EP$. $ DP$ intersects $ AC$ at $ M$ and $ ME$ intersects $ AD$ at $ Q$. Prove that all lines $ PQ$ intersect at a unique point as $ P$ changes.}
 
