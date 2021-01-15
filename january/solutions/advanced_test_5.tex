@@ -59,7 +59,7 @@ What is the minimum number of goals scored in this competition?}
 \item % ELMO 2013 Shortlist, C8
 {\itshape There are $20$ people at a party. Each person holds some number of coins. Every minute, each person who has at least $19$ coins simultaneously gives one coin to every other person at the party. What is the smallest number of coins that could be at the party such that at least one coin is given out in every minute?}
 
-Notice that the construction $(0, 1, \cdots, 19)$ satisfies the condition that the coin sharing never stops. It uses $180$ coins. We shall prove that $180$ is indeed the minimum.
+Notice that the construction $(0, 1, \cdots, 19)$ satisfies the condition that the coin sharing never stops. It uses $190$ coins. We shall prove that $190$ is indeed the minimum.
 
 Suppose person $i$ hands out some of their coins. They hand one coin to each person, so we can label each coin that was handed out as $(i, j)$ to denote that person $i$ gave that coin to person $j$. Now, if person $j$ ever hands out coins, we shall say that they must give person $i$ the coin $(i, j)$ back to person $j$. Such a coin must exist since the assumption is $i$ gave a coin to $j$ and $j$ has not handed out coins since. If the coin sharing does not stop, then each person must eventually hand out coins themselves. Thus we must eventually have that every coin with pair $(i, j)$ and $i \ne j$ must be present at the party. Thus, the lower bound on the number of coins is 
 $$\binom{20}{2} = 190$$
