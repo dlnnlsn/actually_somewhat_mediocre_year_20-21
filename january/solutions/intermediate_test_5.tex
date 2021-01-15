@@ -56,6 +56,20 @@ x^2 + y^2 &= 5x + 5y\\
 Show that
 \[ \gcd(ab, a^2+pb^2) = \begin{cases*} 1 & if $p \nmid a$ \\ p & if $p \mid a$ \end{cases*}. \]}
 
+Case 1: $p \nmid a$ \par
+We will assume for contradiction that $\gcd(ab, a^2+pb^2) > 1$. Let $d = \gcd(ab, a^2+pb^2)$ and let $q$ be any prime divisor of $d$. 
+Then we have that $d \mid ab$ and $d \mid a^2+pb^2 \implies q \mid ab$ and $q \mid a^2+pb^2$. Since $q \mid ab$ and $a$ and $b$ are relatively prime, we have that either $q \mid a$ or $q \mid b$. \par
+If $q \mid a$: since we had $q \mid a^2 + pb^2 \implies q \mid pb^2 \implies q \mid p$ or $q \mid b$. The first case would mean that $q = p$ since both are prime and thus that $p \mid a$ which would be a contradiction and the second would contradict the condition that $a$ and $b$ cannot both be divisible by $q$. \par
+If $q \mid b$: $q \mid a^2 + pb^2 \implies q \mid a^2 \implies q \mid a$ which is a contradiction since we assumed only one of $a$ or $b$ is divisible by $q$. \par
+In conclusion, we have that $\gcd(ab, a^2+pb^2) > 1$ is not true and thus $\gcd(ab, a^2+pb^2) = 1.$ \newline
+
+Case 2: $p \mid a$ \par
+Let $a = pk$ where $k$ is a natural number. Note that since $\gcd(a, b) = 1$ we will also have $\gcd(k, b) = 1$ and $\gcd(p, b) = 1.$ \par
+We can then say $\gcd(ab, a^2+pb^2) = \gcd(pkb, p^2k^2 + pb^2) = p\cdot \gcd(kb, pk^2 + b^2).$ Assume for contradiction that $\gcd(kb, pk^2 + b^2) > 1$. Let $d = \gcd(kb, pk^2 + b^2)$ and let $q$ be any prime divisor of $d$. Then either $q \mid k$ or $q \mid b$. \par
+If $q \mid k$: since we had $q \mid pk^2 + b^2 \implies q \mid b^2 \implies q \mid b$. However, this would be a contradiction since we assumed that $k$ and $b$ cannot both be divisible by $q$. \par
+If $q \mid b$ we will have  $q \mid pk^2 + b^2 \implies q \mid pk^2 \implies q \mid p$ or $q \mid k$ . However, since we had that $\gcd(k, b) = 1$ and $\gcd(p, b) = 1$, we cannot have $k$ or $p$ divisible by $q$ as this would mean that $\gcd(k, b) > 1$ or $\gcd(p, b) > 1$. \par
+In conclusion we will have that $\gcd(kb, pk^2 + b^2) = 1 \implies \gcd(ab, a^2+pb^2) = p\cdot 1 = p$.
+
 
 \item % Tim
 {\itshape A square-based pyramid has all of its edges the same length.
