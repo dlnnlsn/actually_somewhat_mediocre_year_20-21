@@ -92,6 +92,30 @@ We will prove the following result, of which the current problem is a special ca
 {\itshape Define the function $f(x) = x^2 + \sin(x)$ (where $x$ is in radians in this context). Furthermore, let $\{a_n\}$ be a sequence with $a_n \in \mathbb{R}^+$ for all $n \in \mathbb{N}$. Let $a_1 = 1$, and $f(a_n) = a_{n - 1}$ for $n \ge 2$. Prove that there exists $n \in \mathbb{N}$ such that 
 $$\sum_{k = 1}^n a_i > 2021.$$}
 
+We will show by induction on $n$ that $a_n \geq \dfrac{1}{n}$ for all natural numbers $n$. This is true for $n = 1$. Suppose that $a_n \geq \dfrac{1}{n}$ for some $n$. Then we have that
+\[
+	a_{n + 1}^2 + a_{n + 1} \geq a_{n + 1}^2 + \sin(a_{n + 1}) = f(a_{n + 1}) = a_n \geq \dfrac{1}{n},
+\]
+using the well-known fact that $\sin(x) \leq x$ for all positive real numbers $x$. To show that this implies that $a_{n + 1} \geq \dfrac{1}{n + 1}$, we note that the function $x \mapsto x^2 + x$ is increasing over the positive real numbers, and so it is sufficient to show that
+\[
+	\left(\frac{1}{n + 1}\right)^2 + \frac{1}{n + 1} \leq \dfrac{1}{n}.
+\]
+But this is equivalent to
+\[
+	n + n(n + 1) \leq (n + 1)^2
+\]
+which in turn simplifies to $0 \leq 1$.
+
+We recall that the sum
+\[
+	\sum_{k=1}^{n} \frac{1}{k}
+\]
+can be made arbitrarily large by taking $n$ large enough. It follows that the same is true of the sum
+\[
+	\sum_{k=1}^{n} a_k.	
+\]
+
+
 
 \vspace{24pt}
 \item % Ukraine 2016-2017 p54 Q10
