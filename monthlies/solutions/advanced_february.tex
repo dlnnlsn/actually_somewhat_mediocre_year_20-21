@@ -25,6 +25,16 @@
 \item % Danielle/Taariq
 {\itshape Let $c$ and $d$ be positive divisors of a natural number $n$ such that $c > d$. Prove that $$c > d + \frac{d^2}{n}.$$}
 
+Let $n = kc = md$. The inequality that we want to prove is then equivalent to
+\[
+	\frac{n}{k} > \frac{n}{m} + \frac{\frac{n^2}{m^2}}{n} \iff \frac{1}{k} > \frac{1}{m} + \frac{1}{m^2} \iff m^2 > mk + k.
+\]
+Since $c > d$, we have that $k < m$, and so $k \leq m - 1$, and so we have that
+\[
+	mk + k = k(m + 1) \leq (m - 1)(m + 1) = m^2 - 1 < m^2
+\]
+which proves the desired result.
+
 
 \vspace{24pt}
 \item % Ireland 2018 Q9
