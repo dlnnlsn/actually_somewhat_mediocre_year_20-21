@@ -27,6 +27,16 @@
 A cube is placed inside so that one of its faces lies on the base of the pyramid, and the opposite face has an edge along each side of the pyramid (think -- the natural way to put a cube in a pyramid).
 Show that the sum of any of the cube's edge lengths with any of the cube's face diagonal lengths is the same as the edge length of the pyramid.}
 
+Let the base of the square pyramid consist of the square $ABCD$, and the top of the pyramid be point $T$.
+Consider the plane $P$ through points $A$, $T$, and $C$; by the way the cube is placed inside the pyramid, this plane passes through four points of the cube, the intersection of the plane with the surface of the cube being diagonals of the upper and lower faces and two opposite edges; let these edges be $WX$ and $YZ$ respectively.
+Finally, let the edge lengths of the cube and pyramid be $a$ and $b$ respectively; by Pythagoras, $XY = \sqrt{2} YZ = \sqrt{2} a$ and $AC = \sqrt{2} AT = \sqrt{2} b$.
+Considering the intersection of the plane $P$ with the pyramid and the cube, we have a rectangle with $\sqrt{2}$ the ratio of width to height inside an isosceles triangle with a right angle at the top.
+
+We place this on the Cartesian plane centred at the midpoint of the base of the triangle, with the top at $(0,b/\sqrt{2})$ and the other two vertices at $(\pm b/\sqrt{2},0)$; then the vertices of the rectangle are at $(\pm a/\sqrt{2},0)$ and $(\pm a/\sqrt{2},a)$.
+The equation of the side of the triangle on the right is $y = b/\sqrt{2} -x$; since the point $(\pm a/\sqrt{2},a)$ of the rectangle lies on this side, we have
+\[ a = b/\sqrt{2} -a/\sqrt{2} \iff b = \sqrt{2} a + a \]
+as desired.
+
 
 \item % Ireland 2017 Q15
 {\itshape There is a soccer competition with five teams where each team plays exactly one match against each other team.
@@ -56,6 +66,7 @@ What is the minimum number of goals scored in this competition?}
   \item We shall prove that $a_n > a_{n - 1}$. Suppose for contradiction that there exists some $k$ such that $a_k \le a_{k - 1}$. From this we get $a_k \cdot a_{k + 1} \le a_{k - 1} \cdot a_{k + 1} < a_k^2 \implies a_{k + 1} < a_k$. Now one can prove by induction that if there exists some $k$ such that $a_k \le a_{k - 1}$, then the rest of the sequence must be strictly decreasing. However, since the sequence is defined on positive integers, we eventually cannot decrease further. Hence we have a contradiction, so there cannot be a $k$ such that $a_k \le a_{k - 1}$. Hence $a_n > a_{n - 1}$ for all $n$. So we must then have that $a_n > a_1 + {n - 1} = n$.
 \end{enumerate}
 
+
 \item % ELMO 2013 Shortlist, C8
 {\itshape There are $20$ people at a party. Each person holds some number of coins. Every minute, each person who has at least $19$ coins simultaneously gives one coin to every other person at the party. What is the smallest number of coins that could be at the party such that at least one coin is given out in every minute?}
 
@@ -64,6 +75,7 @@ Notice that the construction $(0, 1, \cdots, 19)$ satisfies the condition that t
 Suppose person $i$ hands out some of their coins. They hand one coin to each person, so we can label each coin that was handed out as $(i, j)$ to denote that person $i$ gave that coin to person $j$. Now, if person $j$ ever hands out coins, we shall say that they must give person $i$ the coin $(i, j)$ back to person $j$. Such a coin must exist since the assumption is $i$ gave a coin to $j$ and $j$ has not handed out coins since. If the coin sharing does not stop, then each person must eventually hand out coins themselves. Thus we must eventually have that every coin with pair $(i, j)$ and $i \ne j$ must be present at the party. Thus, the lower bound on the number of coins is 
 $$\binom{20}{2} = 190$$
 Since we have a construction for when it is exactly $190$, we have found the minimum.
+
 
 \item % 
 {\itshape Given a function $f: \mathbb{Q} \rightarrow \mathbb{Q}$ satisfying
