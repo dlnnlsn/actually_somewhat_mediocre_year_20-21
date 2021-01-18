@@ -45,14 +45,26 @@ Suppose that $a \leq \dfrac{3}{4} (b + c)$. We will show that $\sqrt{a-b} +\sqrt
 	\sqrt{a-b} +\sqrt{a-c} \leq \sqrt{\frac{3}{4}(b + c) - b} + \sqrt{\frac{3}{4}(b + c) - c} = \frac{1}{2} \left(\sqrt{3c - b} + \sqrt{3b - c}\right).
 \]
 
-Now
-\begin{align*}
-	& \dfrac{1}{2} \left(\sqrt{3c - b} + \sqrt{3b - c}\right)  \leq \sqrt{b + c} \\
-	\iff & (3c - b) + (3b - c) + 2\sqrt{(3c - b)(3b - c)}  \leq 4(b + c) \\
-	\iff & (3c - b)(3b - c) \leq (b + c)^2 \\
-	\iff & 10bc - 3b^2 - 3c^2 \leq b^2 + 2bc + c^2 \\
-	\iff & 4(b - c)^2 \geq 0
-\end{align*}
+We thus wish to show that
+\[
+	\dfrac{1}{2} \left(\sqrt{3c - b} + \sqrt{3b - c}\right)  \leq \sqrt{b + c}.
+\]
+By squaring both sides, this is equivalent to
+\[
+	(3c - b) + (3b - c) + 2\sqrt{(3c - b)(3b - c)}  \leq 4(b + c).
+\]
+We move the terms not under the square-root to the right hand side, divide by $2$, and square again to obtain
+\[
+	(3c - b)(3b - c) \leq (b + c)^2.
+\]
+Expanding each side of this inequality leads us to want to prove that
+\[
+	10bc - 3b^2 - 3c^2 \leq b^2 + 2bc + c^2
+\]
+which is equivalent to
+\[
+	4(b - c)^2 \geq 0
+\]
 and so we are done.
 
 
