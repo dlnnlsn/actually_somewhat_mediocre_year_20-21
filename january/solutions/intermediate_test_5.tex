@@ -157,6 +157,106 @@ If two teams draw, they each get $1$ point if neither team scored a goal and the
 At the end of the competition it is found that the total points for the teams form five consecutive nonnegative integers.
 What is the minimum number of goals scored in this competition?}
 
+
+\textbf{Solution 1}\\
+Ten matches are played each one contributing either 2, 4 or 5 points. Hence the total number of points is between 20 and 50. If the team scores are five consecutive integers, then the total number of points must be a multiple of 5. If the total number of points is 20, all teams will score 4 and if the total number of points is 50 all team totals will be multiples of 5. Neither of these possibilities satisfy the conditions. Therefore, we need to consider the following five cases:
+\begin{itemize}
+	\item [(a)] scores are 3, 4, 5, 6, 7,
+	\item [(b)] scores are 4, 5, 6, 7, 8,
+	\item [(c)] scores are 5, 6, 7, 8, 9,
+	\item [(d)] scores are 6, 7, 8, 9, 10 and
+	\item [(e)] scores are 7, 8, 9, 10, 11.
+\end{itemize}
+Case (a): Number of wins is odd. 3 wins yield 15 points and the other seven matches yield more than 10 points. The only possibility is one win, 8 0-0 draws and one score draw. But the team that wins must gain at least 3 points in the other matches. Hence this case is impossible.\\
+Case (b): The number of wins is even and cannot be 4 as only three teams have a score of five or more and none have a score of 10. No wins means there are 5 score draws and 5 no score draws. The teams scoring 8 and 7 must be involved in 7 score draws to achieve these totals. Hence, the only possibility is 2 wins 2 score draws and 6 no score draws. The table
+
+\begin{table}[ht!]
+	\begin{center}
+	  \begin{tabular}{ | c | c | c | c | c | c | c |}
+		  \hline
+		    & A & B & C & D & E & Total\\
+		  \hline  
+		  A &   & 5 & 1 & 1 & 1 & 8\\
+		  \hline  
+		  B & 0 &   & 1 & 1 & 5 & 7\\
+		  \hline  
+		  C & 1 & 1 &   & 2 & 2 & 6\\
+		  \hline  
+		  D & 1 & 1 & 2 &   & 1 & 5\\
+		  \hline  
+		  E & 1 & 0 & 2 & 1 &   & 4\\
+		  \hline  
+	  \end{tabular}
+	\end{center}
+\end{table}
+
+realizes this possibility. The minimum number of goals in this case is 6.\\
+Case (c): The number of wins is odd. No team has more than one win. If the number of wins is five, each team must win one match and all other matches are no score draws. A total of 9 is now impossible. If the number of wins is 3, there most be 3 score draws and 4 no score draws. At least 9 goals are scored in this scenario. If the number of wins is 1, there are 6 score draws and three no score draws. This gives at least 13 goals.\\
+Case (d): Again we can calculate the number of wins $(W)$, score draws $(S)$ and no score draws $(N)$ yielding 40 points. The four possibilities are $(W, S, N) = (6, 1 3)$ or (4, 4, 2) or (2, 7, 1) or (0, 10, 0). The minimum number of goals is $W + 2S$ which in each case is bigger than 6.\\
+Case (e): Calculating possible values of $(W, S, N)$ we obtain (7, 2, 1), (5, 5, 0) giving more than 6 goals.
+Thus the minimum number of goals scored in the tournament is 6.\\
+\newline
+\textbf{Solution 2}
+If the five consecutive scores of the teams are $a-2, a-1, a, a+1, a+2$, the total number of points is $5a$. Each match contributes 5, 4 or 2 points to this total.\\
+Let $w$ be the number of matches that did not end in a draw, $d_0$ the number of 0-0 draws and $d_1$ the number of draws with goals. The minimal possible number of goals scored is $g = w + 2d_1$. The number of matches is ${5 \choose 2} = 10$, so we obtain
+\begin{eqnarray*}
+w + d_0 + d_1 & = & 10\\
+5w + 2d_0 + 4d_1 & = & 5a.
+\end{eqnarray*}
+Eliminating $d_0$ from these equations we obtain $3w + 2d_1 = 5(a-4)$. This equation implies $3w = -2d_1$ (mod 5), hence $w = d_1$ (mod 5).\\
+None of $w$, $d_1$ and $w+d_1$ can exceed 10. Hence, $d_1 = w + 5t$ with $-2 \leq t \leq 2$. We obtain $g = w + 2d_1 = 3w + 10t$.
+\begin{itemize}
+\item  If $t = -2$, we have $w = d_1 + 10 \leq 10$, hence $w = 10$, $d_1 = 0$ and $g = 10$.
+\item  If $t = -1$, we have $d_1 = w - 5 \geq 0$ and $w + d_1 = 2w - 5 \leq 10$, hence $5 \leq w + 7$. If $w \geq 6$, we have $g = 3w - 10 \geq 8$. For $w = 5$, we get $g = 5$.
+\item  If $t = 0$,  and $w \geq 3$ we have $g = 3w + 10t \geq 9$.
+\item  If $t \geq 1$, we have $g \geq 10$.
+\end{itemize}
+Hence, there are only four cases in which $g \leq 6$. They are all shown in the table below. The values of $d_0$, $a$ and $g$ are obtained from the equations above.
+
+\begin{table}[ht!]
+	\begin{center}
+	  \begin{tabular}{ | c | c | c | c | c | c |}
+		  \hline
+		  Case &  $w$ & $d_1$ & $d_0$ & $a$ & $g$ \\
+		  \hline  
+		  1 & 0 & 0 & 10 & 4 & 0 \\
+		  \hline  
+		  2 & 1 & 1 &  8 & 5 & 3 \\
+		  \hline  
+		  3 & 5 & 0 &  5 & 7 & 5 \\
+		  \hline
+		  4 & 2 & 2 &  6 & 6 & 6\\
+		  \hline  
+	  \end{tabular}
+	\end{center}
+\end{table}
+
+Case 1: If $d_0 = 10$ all matches were no score draws, hence all teams scored 5 points contradicting the conditions.\\
+Case 2: If $a = 5$, the winning team achieved 7 points. But, if $w = 1$ the team who has one one match cannot have lost any of their matches, hence would have scored at least 8 points.\\
+Case 3: If $a = 7$, the maximum number of points a team scored is 9, hence no team won two matches. As $d_1 = 0$, the top team can have scored at most 3 points from the matches it didn't win, hence cannot have got 9 points in total.\\
+Case 4: This case is actually possible, as the following table shows.
+\begin{table}[ht!]
+	\begin{center}
+	  \begin{tabular}{ | c | c | c | c | c | c | c |}
+		  \hline
+		    & A & B & C & D & E & Total\\
+		  \hline  
+		  A &   & 5 & 1 & 1 & 1 & 8\\
+		  \hline  
+		  B & 0 &   & 1 & 1 & 5 & 7\\
+		  \hline  
+		  C & 1 & 1 &   & 2 & 2 & 6\\
+		  \hline  
+		  D & 1 & 1 & 2 &   & 1 & 5\\
+		  \hline  
+		  E & 1 & 0 & 2 & 1 &   & 4\\
+		  \hline  
+	  \end{tabular}
+	\end{center}
+\end{table}
+
+Therefore, the minimum number of goals scored is 6.
+
 \end{enumerate}
 
 
