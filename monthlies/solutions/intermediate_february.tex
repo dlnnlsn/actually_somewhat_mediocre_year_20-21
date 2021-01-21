@@ -23,6 +23,10 @@
 {\itshape The natural number $n$ can be replaced by $ab$ if $a + b = n$, where $a$ and $b$ are natural numbers. Can the number $2021$ be obtained from $22$ after a sequence of such
 replacements?}
 
+Suppose that the natural number $n$ can be obtained. Then since $(n - 1) + 1 = n$, we have that $(n - 1) \times 1 = n - 1$ can also be obtained. It follows that if we can obtain any number larger than $2021$ after a sequence of such moves, then we can also obtain $2021$ after a sequence of such moves.
+
+Now note that $22 = 11 + 11$, so we can replace $22$ with $11 \times 11 = 121$. Then $121 = 100 + 21$, so we can replace $121$ with $100 \times 21 = 2100$. This is larger than $2021$, so repeatedly replace the current number that we have with its predecessor until we obtain $2021$.
+
 
 \vspace{6pt}
 \item % DB-2014-1
