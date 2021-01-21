@@ -25,7 +25,7 @@ replacements?}
 
 Suppose that the natural number $n$ can be obtained. Then since $(n - 1) + 1 = n$, we have that $(n - 1) \times 1 = n - 1$ can also be obtained. It follows that if we can obtain any number larger than $2021$ after a sequence of such moves, then we can also obtain $2021$ after a sequence of such moves.
 
-Now note that $22 = 11 + 11$, so we can replace $22$ with $11 \times 11 = 121$. Then $121 = 100 + 21$, so we can replace $121$ with $100 \times 21 = 2100$. This is larger than $2021$, so repeatedly replace the current number that we have with its predecessor until we obtain $2021$.
+Now note that $22 = 11 + 11$, so we can replace $22$ with $11 \times 11 = 121$. Then $121 = 100 + 21$, so we can replace $121$ with $100 \times 21 = 2100$. This is larger than $2021$, so we repeatedly replace the current number that we have with its predecessor until we obtain $2021$.
 
 
 \vspace{6pt}
@@ -42,6 +42,24 @@ We thus see that among the first $30000$ positive integers, there are $22000$ th
 {\itshape Let $a$ and $b$ be positive real numbers such that $2a^2 +2b^2 = 5ab$.
 If $|x|$ denotes the absolute value of $x$, calculate
 \[ \left|\frac{a+b}{a-b}\right|. \]}
+
+We rewrite the given equation as
+\[
+	(a + b)^2 + (a - b)^2 = \frac{5}{4} \left( (a + b)^2 - (a - b)^2 \right)	
+\]
+we can be rearranged to become
+\[
+	\frac{1}{4} (a + b)^2 = \frac{9}{4} (a - b)^2	
+\]
+or
+\[
+	\left( \frac{a + b}{a - b} \right)^2 = 9.
+\]
+By taking square-roots, it follows that
+\[
+	\left| \frac{a + b}{a - b} \right| = 3.	
+\]
+
 
 
 \vspace{6pt}
