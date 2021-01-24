@@ -1,7 +1,7 @@
 import olympiad;
 
 settings.outformat = "eps";
-size(10cm);
+size(15cm);
 
 pair A = dir(203);
 pair B = dir(70);
@@ -10,6 +10,8 @@ pair M = foot(A, B, C);
 pair N = foot(C, A, B);
 pair Y = extension(A, C, M, N);
 pair X = N + M - B;
+pair P = extension(M, X, A, C);
+pair Q = extension(N, X, A, C);
 
 pair mxn = bisectorpoint(M, X, N);
 pair myc = bisectorpoint(M, Y, C);
@@ -22,8 +24,9 @@ pair yz = Z + 0.1 * dir(Z - Y);
 draw(A--B--C--cycle);
 draw(A--M);
 draw(C--N);
-draw(N--X--M);
-draw(M--Y--C);
+draw(N--X--Q);
+draw(M--X--P);
+draw(N--M--Y--C);
 draw(Y--yz, dashed);
 draw(zx--X--xz, dashed);
 
@@ -33,4 +36,13 @@ dot("$C$", C, S);
 dot("$M$", M, NE);
 dot("$N$", N, NW);
 dot("$Y$", Y, S);
-dot("$X$", X, S);
+dot("$X$", X, E);
+dot("$P$", P, S);
+dot("$Q$", Q, S);
+
+draw(anglemark(C, M, Y, 3pt));
+draw(anglemark(Q, N, M, 3pt));
+draw(anglemark(C, P, M, 3pt));
+draw(anglemark(C, A, B, 3pt));
+draw(rightanglemark(A, M, C, 2pt));
+draw(rightanglemark(A, N, C, 2pt));
