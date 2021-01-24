@@ -73,13 +73,19 @@ and so we are done.
 \item % NH-2006-1
 {\itshape Let $ABCD$ be a square.
 Points $P$ and $Q$ lie on the segments $AD$ and $DC$ such that $\angle PBQ = 45^\circ$.
-Prove that $BP$ bisects $\angle APQ$ and $BQ$ bisects $\angle AQP$.}
+Prove that $BP$ bisects $\angle APQ$ and $BQ$ bisects $\angle CQP$.}
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics{advanced_february_problem3.eps}
 	\caption{Problem 3}
 \end{figure}
+
+Let $R$ be a point on $DC$ extended such that $CR = AP$. Then in triangles $BAP$ and $BCR$, we have that $AP = CR$, $BA = BC$, and $\angle BAP = \angle BCR = 90^\circ$. It follows that $\triangle BAP \cong \triangle BCR$, and so in particular we have that $BP = BR$ and $\angle ABP = \angle CBR$.
+
+We note this this implies that $\angle QBR = \angle QBC + \angle CBR = \angle QBC + \angle ABP = 90^\circ - \angle PBQ = 45^\circ = \angle QBP$.
+
+In triangles $QBP$ and $QBR$, we thus have that $QB$ is common, $BP = BR$, and $\angle QBP = \angle QBR$. Thus $\triangle QBP \cong \triangle QBR$, and so $\angle RQB = \angle PQB$, as we wished to show. A similar argument shows that $\angle QPB = \angle APB$.
 
 
 \vspace{24pt}
