@@ -64,11 +64,25 @@ By taking square-roots, it follows that
 
 \vspace{6pt}
 \item % Taariq, stolen from AOPS
-{\itshape Triangle $ABC$ is a right angled triangle with $\angle C = 90^{\circ}$. $P$ is placed randomly inside $\triangle ABC$. What is the probability that the area of $\triangle PBC$ is less than half of the area of $\triangle ABC$?
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{../fig.jpg}
-\end{figure}}
+{\itshape Triangle $ABC$ is a right angled triangle with $\angle C = 90^{\circ}$. $P$ is placed randomly inside $\triangle ABC$. What is the probability that the area of $\triangle PBC$ is less than half of the area of $\triangle ABC$?}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics{intermediate_february_problem4.eps}
+	\caption{Problem 3}
+\end{figure}
+
+Let the foot of the perpendicular from $P$ onto $BC$ be $D$. Let $M$ and $N$ be the midpoints of $AC$ and $BC$ respectively. We note that the area of $PBC$ is given by $\frac{1}{2} BC \times PD$, and that the area of triangle $ABC$ is given by $\frac{1}{2} BC \times AC$.
+
+It follows that the area of triangle $PBC$ is less than half of that of $ABC$ if and only if $PD < \frac{1}{2} AC$. We see that this is equivalent to $P$ not lying in the triangle $AMN$. Now the area of triangle $AMN$ is given by
+\[
+	\frac{1}{2} MN \times AM = \frac{1}{2} \left(\frac{1}{2} BC \right) \times \left(\frac{1}{2} AC\right) = \frac{1}{4} |ABC|	
+\]
+where $|ABC|$ denotes the area of triangle $ABC$. It follows that the probability that a randomly chosen point chosen inside triangle $ABC$ lies in $AMN$ is
+\[
+	\frac{|AMN|}{|ABC|} = \frac{1}{4},	
+\]
+and so the probability that $P$ \emph{does not} lie in triangle $AMN$ is $1 - \frac{1}{4} = \frac{3}{4}$.
 
 
 \vspace{6pt}
