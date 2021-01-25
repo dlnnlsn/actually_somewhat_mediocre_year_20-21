@@ -42,12 +42,12 @@ dot("$Z$", Z, NW);
 
 markscalefactor = 1;
 
-draw(anglemark(M, Y, T, 0.2));
-draw(anglemark(Z, Y, P, 0.2));
+draw(anglemark(M, Y, T, 0.23));
+draw(anglemark(Z, Y, P, 0.23));
 pair y1dir = dir(dir(M - Y) + dir(T - Y));
 pair y2dir = dir(dir(T - Y) + dir(P - Y));
-label("$\alpha$", Y + 0.2 * y1dir, y1dir, fontsize(6pt));
-label("$\alpha$", Y + 0.2 * y2dir, y2dir, fontsize(6pt));
+label("$\alpha$", Y + 0.24 * y1dir, y1dir);
+label("$\alpha$", Y + 0.24 * y2dir, y2dir);
 
 draw(anglemark(M, X, S, 0.07, 0.06));
 draw(anglemark(S, X, N, 0.07, 0.06));
@@ -60,8 +60,8 @@ label("$\beta$", X + 0.1 * x2dir, fontsize(6pt));
 
 draw(anglemark(Y, Z, S, 0.06, 0.05, 0.04, 0.03));
 pair z1dir = dir(dir(Y - Z) + dir(S - Z));
-label("$x$", Z + 0.09 * z1dir, fontsize(6pt));
+label("$x$", Z + 0.11 * z1dir);
 
 draw(anglemark(N, M, P, 0.08, 0.07, 0.06));
 pair m1dir = dir(dir(N - M) + dir(P - M));
-label("$\varphi$", M + 0.11 * m1dir, fontsize(6pt));
+label("$\varphi$", M + 0.12 * m1dir);
