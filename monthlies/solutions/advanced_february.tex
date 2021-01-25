@@ -157,6 +157,28 @@ can be made arbitrarily large by taking $n$ large enough. It follows that the sa
 It is given $X$ is a point inside acute-angled triangle $ABC$ such that $MBNX$ is a parallelogram.
 Prove that the angle bisectors of $\angle MXN$ and $\angle MYC$ are perpendicular.}
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics{advanced_february_problem6.eps}
+	\caption{Problem 6}\label{fig:q6part1}
+\end{figure}
+
+Let $P$ and $Q$ be the points of intersection of the lines $MX$ and $NX$ with the line $AC$ respectively. Consider the arrangement of points in Figure \ref{fig:q6part1}. We will show that $\angle QPM = \angle QNM$.
+
+Since $\angle ANC = \angle AMC = 90^\circ$, we have that the points $A$, $N$, $M$, and $C$ are concyclic, implying that $\angle CAN = \angle CMY$. Since $MX \parallel BA$, we have that $\angle QPM = \angle CAN$, and since $NX \parallel BC$, we have that $\angle QNM = \angle CMY$. Hence $\angle QPM = \angle QNM$, as claimed.
+
+\begin{figure}[!hb]
+	\centering
+	\includegraphics{advanced_february_problem6_part2.eps}
+	\caption{Problem 6}\label{fig:q6part2}
+\end{figure}
+
+Let $Z$ be the intersection of the bisectors of angles $\angle MXN$ and $\angle MYC$. Let $T$ be intersection of $PM$ and $YZ$ (extended), and let $S$ be the intersection of $NM$ and $XZ$ (extended). Let $x$, $\alpha$, $\beta$, and $\varphi$ be the angled marked as such in Figure \ref{fig:q6part2}.
+
+Then the angles of the triangle $XZT$ are as follows: $\angle TXZ = \beta$, $\angle XZT = 180^\circ - x$, and $\angle XTZ = \varphi - \alpha$ by the exterior angle theorem in triangle $TMY$. These angles sum to $180^\circ$, and so we have that $\beta + 180^\circ - x + \varphi - \alpha = 180^\circ$, or equivalently that $x = \beta + \varphi - \alpha$.
+
+Finally, we prove that $\beta + \varphi - \alpha = 90^\circ$. The angles in triangle $MXN$ sum to $180^\circ$, and so we have that $\angle QNM = \angle XNM = 180^\circ - 2\beta - \varphi$. We also know that $\angle QPM = \angle YPM = \varphi - 2\alpha$ by the exterior angle theorem in triangle $PMY$. We proved earlier that $\angle QPM = \angle QNM$. This implies that $180^\circ - 2\beta - \varphi = \varphi - 2\alpha$, and so $\beta + \varphi - \alpha = 90^\circ$, as desired.
+
 
 \end{enumerate}
 
