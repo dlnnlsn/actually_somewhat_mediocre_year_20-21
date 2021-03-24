@@ -102,7 +102,17 @@ For $n \geq 3$:
 Every town must have at least two different roads to it otherwise if there were no roads to this town we wouldn't be able to reach it from any other town, and if there was only one road coming in then we would always have to pass through the town at the start of that road and this would break being able to approach two different ways from a third town. Thus, we need at least two roads per town ($=2n$ roads). But note that we have counted each road twice since we have counted it from the town on the one side as well as the town on the other. So we need at least $n$ roads. For a construction using $n$ roads, just cycle through the towns choosing any one that hasn't been connected and connecting it to the last town, then connect the last to the first. Now we have two routes between any two towns, one going forward on this cycle and the other going backwards. (It may help to visualize it as an $n$-gon.)
 
 
+\vspace{24pt}
+\item % Tim Schlesinger
+{\itshape Let $ABC$ be a triangle with centroid $G$.
+$\Gamma$ is the circle with diameter $BG$ and $H$ is its centre.
+Let $CG$ extended intersect $AB$ at $F$ and $\Gamma$ at $I$ different to $G$.
+Let $AG$ extended intersect $BC$ at $D$ and $\Gamma$ at $J$ different to $G$. Show that $IJ$ is parallel to $FD$ if and only if $I$, $H$, and $J$ are collinear.}
 
+\textbf{Reverse implication:}
+Let $I,H,J$ be collinear. Then $IJ$ is a diameter of $\Gamma$ so $IBJG$ is a rectangle. This gives $IB$ and $GJ$ equal and parallel. Now, since $CD=DB$, midpoint theorem gives $DG=\frac{1}{2}IB = \frac{1}{2}GJ$ and so $D$ is the midpoint of $GJ$. Similarly, we can get $F$ as the midpoint of $GI$, and midpoint theorem twice gives $IJ \parallel DF \parallel AC$.
+
+\textbf{Forward implication:}
 
 
 \end{enumerate}
