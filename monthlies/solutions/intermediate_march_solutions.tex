@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newtheorem*{lemma}{Lemma}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \textbf{\Large Advanced February Monthly Assignment Solutions}
+\end{center}
+
+\vspace{12pt}
+
+\begin{enumerate}[1.]
+
+\vspace{24pt}
+\item % Tim Schlesinger, probably exists in the public domain
+{\itshape Two players play a game on a ${4\times n}$ checkerboard. They take turns to place checkers according to the following rule: no checker can be on a square that is adjacent (by either edge or vertex) to a square that already contains a checker. The last player to place a checker wins. Show that Player 2 can always win such a game.}
+
+Wherever player 1 plays, player 2 ``completes" the column. If player 1 played in the first or second row, player 2 can play in the last row (same column) and if player 1 plays in either of the other rows (third and fourth), player 2 can play in the first row (same column). We now show two things:
+\begin{itemize}
+\item Player 2 can always play like this. This is because every column that player 1 ``blocks out" part of with his move is completed by player 2's move. e.g. if player 1 plays in row 1, maybe it affects the column to the right (neither the first nor second second squares are now legal to place in) but player 2's move would be in row 4, blocking the third and fourth squares in the same column. In this way, columns are ``completely blocked" by every pair of moves (we can't have only part of a column blocked off after player 2's turn). Thus, it is not possible for player 2 to be forced into a loss since the column that player 1 plays in must have been empty before his move, meaning that the columns to either side of it can't have blocked him off, meaning they must be completely empty, leaving it possible for player 2 to legally implement our strategy.
+\item If player 2 plays like this, they will win. Player 2 will always be able to move, as shown above. Since each move blocks out at least one square, and there are finite squares to block out, eventually the game will end. Since player 2 can always play on their turn, they must have been the last one to place a checker.
+\end{itemize}
+
+\vspace{24pt}
+\item % Tim Schlesinger, probably well-known
+{\itshape We are given ${\Delta ABC}$. Lines ${l_B}$ and ${l_C}$ are the external angle bisectors at ${B}$ and ${C}$ respectively. ${p_1}$ is the perpendicular line from ${B}$ to ${l_C}$ and ${p_2}$ from ${C}$ to ${l_B}$. ${A'}$ is the intersection of lines ${p_1}$ and ${p_2}$. ${B'}$ and ${C'}$ are defined analogously (as the intersection of \emph{the perpendicular from one vertex of the triangle to the external angle bisector of another vertex} with \emph{the perpendicular from the second vertex to the external angle bisector of the original vertex}). Show that the area of hexagon ${AB'CA'BC'}$ is twice the area of ${\Delta ABC}$.}
+
+Let $I$ be the incenter of $\Delta ABC$. Let $p_1$ intersect $l_C$ at X. Then we have:
+$$A'\hat{B}C = X\hat{B}C = 90 - X\hat{C}B = 90 - \frac{1}{2}\hat{C}_{exterior} = 90 - \frac{1}{2}(180-\hat{C}) = \frac{\hat{C}}{2} = I\hat{C}B$$
+Similarly:
+$$ A'\hat{C}B = I\hat{B}C$$
+Now, $\Delta A'BC \equiv \Delta ICB (AAS)$.
+
+Similarly, $\Delta B'CA \equiv \Delta IAC$ and $\Delta C'AB \equiv \Delta IBA$.
+
+Finally, since $$|\Delta A'BC| + |\Delta ICB| + |\Delta B'CA| + |\Delta IAC| + |\Delta C'AB| + |\Delta IBA| = 2(|\Delta ICB| + |\Delta IAC| + |\Delta IBA|)$$the result follows.
+
+\vspace{24pt}
+\item % Tim Schlesinger
+{\itshape Solve for positive integers $a$, $b$, and $c$:
+\begin{align*}
+a^2 + bc &= 181\\
+ab + ac &= 820.
+\end{align*}}
+
+Add the equations and factorise to get:
+$$(a+b)(a+c)=1001$$
+
+$1001 = 7.11.13$ and $a+b\geq2$, $a+c\geq2$, with both initial equations symmetric in $b,c$.
+
+So $a+b=7,11$ or $13$ with $a+c=143,91$ or $77$. The rest of the solutions will come from swapping the values of $b$ and $c$.
+
+Note that $$a((a+b)+(a+c))= 2a^2+ab+ac = 2a^2+820$$
+
+This gives three different equations for $a$, depending on the case:
+\begin{enumerate}
+\item $150a = 2a^2+820$. First note that $a$ is divisible by 5, then apply mod 25 for a contradiction.
+\item $102a = 2a^2+820$. Then $a^2 - 51a + 410 = 0$ so $(a-41)(a-10)=0$. If $a=41$, $a^2>181$, so $a=10, b=1, c=81$.
+\item $90a = 2a^2+820$. First note that $a$ is divisible by 5, then apply mod 25 for a contradiction.
+\end{enumerate}
+
+And our two solutions are: $(10,1,81)$ and $(10,81,1)$
+
+
+\vspace{24pt}
+\item % Tim Schlesinger
+{\itshape Show that for all $x,y > 0$, we have:
+$$ x^4 + y^4 \geq \frac{1}{2} xy (x+y)^2 $$}
+
+AM-GM gives:
+\begin{enumerate}
+\item $$\frac{3x^4+y^4}{4}\geq x^3y$$
+\item $$\frac{x^4+3y^4}{4}\geq xy^3$$
+\item $$\frac{x^4+y^4}{2}\geq x^2y^2$$
+\end{enumerate}
+
+Taking $\frac{1}{2}(a)+\frac{1}{2}(b)+(c)$ gives us the required equation:
+$$ x^4 + y^4 \geq \frac{1}{2} x^3y + \frac{1}{2} xy^3 + x^2y^2  $$
+
+
+\vspace{24pt}
+\item % Tim Schlesinger, definitely standard graph theory stuff
+{\itshape There are $n$ towns in a country.
+Every road in this country goes from one of these towns to another (different) town. These are not one-way roads.
+Two independent routes from town $A$ to town $B$ are routes that don't have any intermediate towns in common (i.e. there are no towns that lie between $A$ and $B$ on both routes).
+If we are told that there are at least two independent routes from any town $A$ to any other town $B$, what is the minimum number of roads that could be in this country?}
+
+For 2 towns it is clear that we need only 2 roads to satisfy the problem, both between the two towns, and that we cannot do it with less.
+
+For $n \geq 3$:
+Every town must have at least two different roads to it otherwise if there were no roads to this town we wouldn't be able to reach it from any other town, and if there was only one road coming in then we would always have to pass through the town at the start of that road and this would break being able to approach two different ways from a third town. Thus, we need at least two roads per town ($=2n$ roads). But note that we have counted each road twice since we have counted it from the town on the one side as well as the town on the other. So we need at least $n$ roads. For a construction using $n$ roads, just cycle through the towns choosing any one that hasn't been connected and connecting it to the last town, then connect the last to the first. Now we have two routes between any two towns, one going forward on this cycle and the other going backwards. (It may help to visualize it as an $n$-gon.)
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
