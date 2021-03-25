@@ -112,7 +112,24 @@ Let $AG$ extended intersect $BC$ at $D$ and $\Gamma$ at $J$ different to $G$. Sh
 \textbf{Reverse implication:}
 Let $I,H,J$ be collinear. Then $IJ$ is a diameter of $\Gamma$ so $IBJG$ is a rectangle. This gives $IB$ and $GJ$ equal and parallel. Now, since $CD=DB$, midpoint theorem gives $DG=\frac{1}{2}IB = \frac{1}{2}GJ$ and so $D$ is the midpoint of $GJ$. Similarly, we can get $F$ as the midpoint of $GI$, and midpoint theorem twice gives $IJ \parallel DF \parallel AC$.
 
+
 \textbf{Forward implication:}
+Let $C\hat{I}J=\alpha$ and $A\hat{J}I=\beta$. Note that $DF\parallel CA\Rightarrow IJ\parallel AC$.
+
+We then have $I\hat{C}A=\alpha$, $J\hat{A}C=\beta$ (alt $\angle$s) and, since $BJGI$ is cyclic, $G\hat{B}J=\alpha$ and $G\hat{B}I=\beta$.
+
+$B\hat{I}G=B\hat{I}G=90^{\circ}$ so $J\hat{G}B=90-\alpha$ and $I\hat{G}B=90-\beta$, which gives $A\hat{G}E=90-\alpha$ and $C\hat{G}E=90-\beta$.
+
+Now, with sine rule in $\Delta AGE and \Delta CGE$, we have:
+$$\frac{\sin{(90-\alpha)}}{\sin{\beta}}=\frac{EA}{EG}=\frac{EC}{EG}=\frac{\sin{(90-\beta)}}{\sin{\alpha}}$$
+
+So $\sin{\alpha}\cos{\alpha}=\sin{\beta}\cos{\beta}$, which means $\sin{2\alpha} = \sin{2\beta}$.
+
+This means that either $\alpha=\beta$ or $2\alpha+2\beta = 180$.
+
+In the case $\alpha=\beta$, $\Delta AGC$ is isosceles, so $A\hat{E}G=90^{\circ}$ so $\Delta ABC$ is isosceles. The question was updated to exclude this case.
+
+In the case $2\alpha+2\beta = 180$, $I\hat{H}G=2\beta$ and $J\hat{H}G=2\alpha$ ($\angle$ at center), so $I\hat{H}J = 2\alpha+2\beta = 180$, and hence $I,H,J$ are collinear, as required.
 
 
 \end{enumerate}
