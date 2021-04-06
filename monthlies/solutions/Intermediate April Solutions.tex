@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newtheorem*{lemma}{Lemma}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \textbf{\Large Intermediate April Monthly Assignment Solutions}
+\end{center}
+
+\vspace{12pt}
+
+\begin{enumerate}[1.]
+\vspace{24pt}
+{\itshape \item %Q1 from 2009 Senior Talent Search Round 4
+Find all natural numbers $k$ which can be represented as the sum of two relatively prime numbers not equal to 1.}
+
+$1 = 1$\\
+$2 = 1+1$\\
+$3 = 1+2$\\
+$4 = 1+3 = 2+2$\\
+$6 = 1+5 = 2+4 = 3+3$\\
+As can clearly be seen, none of the above can be written as the sum of two relatively prime numbers not equal to 1.\\
+\newline
+Consider $k = 2n+1 = (n) + (n+1)$ for $n > 1$.\\
+$gcd(n, n+1) = gcd(n, n+1 - n) = gcd(n, 1) = 1$.\\
+So all odd numbers greater or equal to 5 can be written as the sum of two relatively prime numbers not equal to 1.\\
+\newline
+Consider $k = 4n = (2n-1) + (2n+1)$ for $n > 1$.\\
+$gcd(2n-1, 2n+1) = gcd(2n-1, 2n+1 - (2n-1)) = gcd(2n-1, 2) = gcd(2n-1 - 2n, 2) = gcd(-1, 2) = gcd(1, 2) = 1$.\\
+So all multiples of 4 greater than 4 can be written as the sum of two relatively prime numbers not equal to 1.\\
+\newline
+Consider $k = 4n+2 = (2n-1) + (2n+3)$ for $n > 1$.\\
+$gcd(2n-1, 2n+3) = gcd(2n-1, 2n+3 - (2n-1)) = gcd(2n-1, 4) = 1$ since $2n-1$ is odd and not divisible by 2.\\
+So all numbers 2 more than a multiple of 4 greater than 6 can be written as the sum of two relatively prime numbers not equal to 1.\\
+\newline
+So all natural numbers except 1, 2, 3, 4, 6 can be written as the sum of two relatively prime numbers not equal to 1.
+
+\vspace{24pt}
+{\itshape \item %Q3 from 2009 Senior Talent Search Round 3
+$ABCD$ is a convex quadrilateral having perpendicular diagonals and it can also be inscribed in a circle with centre $O$. Prove that the broken line $AOC$ divides the quadrilateral into two parts of equal area.}
+
+Let $|X|$ represent the area of shape $X$.\\
+Drop $OF$ onto $BD$ such that $OF \perp BD$.\\
+So $BF = FD$, because the line from the centre perpendicular on a chord bisects the chord.\\
+By calculating areas of triangles we get,\\
+$|AOCB| = |ABC| + |AOC| = \frac{1}{2}AC.BE + \frac{1}{2}AC.EF = \frac{1}{2}AC.BF = \frac{1}{4}AC.BD$\\
+$= \frac{1}{4}AC(BE+ED) = \frac{1}{2}(|ABC|+|ACD|) = \frac{1}{2}|ABCD|$\\
+So $|AOCB| = |AOCD|$ and therefore the broken line $AOC$ divide the quadrilateral into two parts of equal area.
+
+\vspace{24pt}
+{\itshape \item %Q5 from 2009 Senior Talent Search Round 3
+There are 68 coins, each coin having a different weight than that of the others. Show how to find the heaviest and lightest coin in 100 weighings on a balance beam.}
+
+Notice that if we have a group of 2 coins, we may determine the lightest and heaviest of these in one weighing.\\
+\newline
+Now divide the 68 coins into 34 groups of 2 coins. We may determine the lightest and heaviest coin in each of these groups in 34 weighings, one weighing for each group. Take the heaviest coin from each group and call this group of heavy coins $H$. Similarly, take the lightest coin from each group and call this group $L$.\\
+\newline
+Take the first coin from $H$ and weigh it against the second coin. Repeat this process with the heavier coin from the first weighing and the next coin from $H$. Proceed in this manner, keeping the heaviest coin from each weighing and weighing it against the next coin. After 33 weighings, we will be left with the heaviest coin. Repeat this process with $L$, taking the lightest coin from each weighing instead of the heavier one. After a further 33 weighings we will thus have determined the lightest coin, for a total of $34+33+33=100$ weighings.\\
+
+\vspace{24pt}
+\item %Q4 from 2009 Senior Talent Search Round 4
+{\itshape Inside square $ABCD$ consider a point $M$. Prove that the points of intersection of the medians of triangles $ABM$, $BCM$, $CDM$ and $DAM$ form a square.}
+
+Let $E$, $F$, $G$ and $H$ be the midpoinds of $AB$, $BC$, $CD$ and $DA$ respectively. Draw $EF$, $FG$, $GH$, $HE$. Notice that, since $ABCD$ is a square $EFGH$ must also be a square. $EF=FG=GH=HE = \sqrt{AE^2+AH^2}$ and $\angle HEF = 90^{\circ}$, since $\angle AEH = 45^{\circ}$ and $\angle BEF = 45^{\circ}$ and similarly for the others.\\
+\newline
+Now the medians of a triangle intersect in the centroid. So let $E'$, $F'$, $G'$ and $H'$ re-present the centroids of triangle $ABM$, $BCM$, $CDM$ and $DAM$ respectively. Note that the centroids will lie on the median and hence $E'$ lies on $ME$. Furthermore, the centroid divides the median in the ratio $2:1$. So $ME'= 2E'E$. Similarly for the other centroids so $MF' = 2F'F$, $MG' = 2G'G$ and $MH' = 2H'H$.\\
+\newline
+Triangles $MEF$ and $ME'F'$ are similar since their sides are in the ratio $3:2$ and $\angle M$ is common. So $E'F' \parallel EF$. Similarly $F'G' \parallel FG$, $G'H' \parallel GH$ and $H'E' \parallel HE$. Furthermore the angle are also preserved and lastly $E'F'=F'G'=G'H'=H'E'$ since the same ratio is applied to all sides. Thus $E'F'G'H'$ is a square and hence the centroids form a square.
+
+\vspace{24pt}
+\item %Inequality. #141 Bulgarian Spring Mathematics Festival 2000.
+{\itshape For $x,y,z >0,$ prove that $$\frac{x^3}{x+y}+\frac{y^3}{y+z} + \frac{z^3}{z+x} \geq \frac{xy+yz+zx}{2}.$$}
+
+
+We first show that $\displaystyle\frac{x^2}{x+y} \geq \frac{3x-y}{4}.$ $$\frac{x^2}{x+y}-\frac{3x-y}{4} = \frac{4x^2 - 3x^2 + xy - 3xy + y^2}{4(x+y)} = \frac{(x-y)^2}{4(x+y)} \geq 0.$$ \\ We now have that $\displaystyle \frac{x^3}{x+y} \geq \frac{3x^2-xy}{4}.$ Similarly, $\displaystyle\frac{y^3}{y+z} \geq \frac{3y^2-yz}{4}$ and $\displaystyle\frac{z^3}{z+x} \geq \frac{3z^2-zx}{4}.$ Adding these three inequalities, we get $$\displaystyle\frac{x^3}{x+y} + \frac{y^3}{y+z} + \frac{z^3}{z+x} \geq \frac{3x^2 - xy + 3y^2 - yz + 3z^2 - zx}{4}.$$\\
+It is easy to prove that $$x^2 + y^2 + z^2 \geq xy + yz + zx,$$ for all positive reals $x,y$ and $z$. Thus, $$\frac{3(x^2 + y^2 + z^2) - xy -yz -zx}{4} \geq \frac{2(xy+yz+zx)}{4} = \frac{xy+yz+zx}{2}$$ and we are done.
+
+
+\vspace{24pt}
+\item %April 2015 Monthly
+{\itshape Find all functions $f:\mathbb{R}\setminus\{0\}\to\mathbb{R}$ such that for all $x\in\mathbb{R}$, $x\ne 0,1$ we have
+	$$f(x)+f\left(\frac{1}{1-x}\right)=x.$$}
+
+By replacing successively $x$ with $x$, $\frac{1}{1-x}$ and $\frac{x-1}{x}$, we obtain the equations
+	\begin{align}
+	  f(x)+f\left(\frac{1}{1-x}\right)=&\,\,x\label{1.1}\\
+		f\left(\frac{1}{1-x}\right)+f\left(\frac{x-1}{x}\right)=&\frac{1}{x-1}\label{1.2}\\
+		f\left(\frac{x-1}{x}\right)+f(x)=&\frac{x-1}{x}\label{1.3}
+	\end{align}
+	By taking half of \eqref{1.1}+\eqref{1.3}$-$\eqref{1.2} we get
+	$$f(x)=\frac{1}{2}\left(x+\frac{x-1}{x}-\frac{1}{1-x}\right).$$
+	To check that this solution satisfies the original equation, note that
+	$$f\left(\frac{1}{1-x}\right)=\frac{1}{2}\left(\frac{1}{1-x}+x-\frac{x-1}{x}\right)\quad\text{and}\quad f\left(\frac{x-1}{x}\right)=\frac{1}{2}\left(\frac{x-1}{x}+\frac{1}{1-x}-x\right),$$
+	and the check is easy.
+
+\end{enumerate}
+
+\end{document}

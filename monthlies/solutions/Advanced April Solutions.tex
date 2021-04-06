@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newtheorem*{lemma}{Lemma}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \textbf{\Large Advanced April Monthly Assignment Solutions}
+\end{center}
+
+\vspace{12pt}
+
+\begin{enumerate}[1.]
+
+\vspace{24pt}
+\item %Inequality. #141 Bulgarian Spring Mathematics Festival 2000.
+{\itshape For $x,y,z >0,$ prove that $$\frac{x^3}{x+y}+\frac{y^3}{y+z} + \frac{z^3}{z+x} \geq \frac{xy+yz+zx}{2}.$$}
+
+
+We first show that $\displaystyle\frac{x^2}{x+y} \geq \frac{3x-y}{4}.$ $$\frac{x^2}{x+y}-\frac{3x-y}{4} = \frac{4x^2 - 3x^2 + xy - 3xy + y^2}{4(x+y)} = \frac{(x-y)^2}{4(x+y)} \geq 0.$$ \\ We now have that $\displaystyle \frac{x^3}{x+y} \geq \frac{3x^2-xy}{4}.$ Similarly, $\displaystyle\frac{y^3}{y+z} \geq \frac{3y^2-yz}{4}$ and $\displaystyle\frac{z^3}{z+x} \geq \frac{3z^2-zx}{4}.$ Adding these three inequalities, we get $$\displaystyle\frac{x^3}{x+y} + \frac{y^3}{y+z} + \frac{z^3}{z+x} \geq \frac{3x^2 - xy + 3y^2 - yz + 3z^2 - zx}{4}.$$\\
+It is easy to prove that $$x^2 + y^2 + z^2 \geq xy + yz + zx,$$ for all positive reals $x,y$ and $z$. Thus, $$\frac{3(x^2 + y^2 + z^2) - xy -yz -zx}{4} \geq \frac{2(xy+yz+zx)}{4} = \frac{xy+yz+zx}{2}$$ and we are done.
+
+
+\vspace{24pt}
+\item %April 2015 Monthly
+{\itshape Find all functions $f:\mathbb{R}\setminus\{0\}\to\mathbb{R}$ such that for all $x\in\mathbb{R}$, $x\ne 0,1$ we have
+	$$f(x)+f\left(\frac{1}{1-x}\right)=x.$$}
+
+By replacing successively $x$ with $x$, $\frac{1}{1-x}$ and $\frac{x-1}{x}$, we obtain the equations
+	\begin{align}
+	  f(x)+f\left(\frac{1}{1-x}\right)=&\,\,x\label{1.1}\\
+		f\left(\frac{1}{1-x}\right)+f\left(\frac{x-1}{x}\right)=&\frac{1}{x-1}\label{1.2}\\
+		f\left(\frac{x-1}{x}\right)+f(x)=&\frac{x-1}{x}\label{1.3}
+	\end{align}
+	By taking half of \eqref{1.1}+\eqref{1.3}$-$\eqref{1.2} we get
+	$$f(x)=\frac{1}{2}\left(x+\frac{x-1}{x}-\frac{1}{1-x}\right).$$
+	To check that this solution satisfies the original equation, note that
+	$$f\left(\frac{1}{1-x}\right)=\frac{1}{2}\left(\frac{1}{1-x}+x-\frac{x-1}{x}\right)\quad\text{and}\quad f\left(\frac{x-1}{x}\right)=\frac{1}{2}\left(\frac{x-1}{x}+\frac{1}{1-x}-x\right),$$
+	and the check is easy.
+
+
+\vspace{24pt}
+\item %January 2015 Monthly 
+{\itshape Given a convex quadrilateral $ABCD,$ $ OA = \frac{OB.OD}{OC+OD}$, where $O$ is the intersection point of the diagonals of $ABCD$. The circumcircle of $\triangle ABC$, intersects the line $BD$ in point $Q$. Prove that $CQ$ bisects $\angle DCA.$\\}
+
+Let $CQ_1$, $Q_1 \in BD$ be the angle bisector of $\angle DCA$. From the Angle-Bisector Theorem, we have that $\frac{DQ_1}{Q_1O}=\frac{DC}{CO}$.
+
+Using this, and the fact
+that $OA = \frac{OB.OD}{OC + DC}$ , we have that $OA(OC + DC) = OB.OD \iff OA.OC (1 + \frac{DQ_1}{Q_1O}) = OB.OD \iff OA.OC (\frac{Q_1O + DQ_1}{Q1O})= OB.OD \iff OA.OC.\frac{DO}{Q_1O} = OB.OD \iff OA.CO = Q_1O.OB$, which proves that
+quadrilateral $ABCQ_1$ is cyclic. Thus $Q_1$ is $Q$.
+
+
+\vspace{24pt}
+\item %Number theory. Question 4, Grade 10-12, p.37, First Bulgarian Festival for young talents.
+{\itshape Find natural numbers $x,y,z$ such that $$7^x +13^y = 2^z.$$}
+
+
+From the given expression we have that $2^z \equiv (-1)^y$ $($mod $ 7),$ which is true only if $2$ $|$ $y$ and $3$ $|$ $z.$ Let $z = 3k.$ Since $7^x \equiv 2^z$ $($mod $13)$ we have, from Fermat's Little Theorem, that $7^{4x} \equiv 2^{12k} \equiv 1$ $($mod $13),$ which holds only if $12$ $|$ $4x,$ i.e. $3$ $|$ $x.$ Let $x = 3j.$ Now the LHS of our original expression becomes a difference of cubes and we have $$(2^k -7^j)(2^{2k}+2^k7^j+7^{2j}) = 13^y.$$ It is straight forward to show that if $13$ $|$ $2^k - 7^j,$ then $13 \not{|}$ $2^{2k} + 2^k7^j + 7^{2j}.$ Thus, since $2^{2k} + 2^k7^j + 7^{2j} > 1,$ we must have that $2^k - 7^j = 1.$ If $k \geq 4,$ we must have $7^j \equiv -1$ $($mod $16),$ which is impossible. After checking all $k<4,$ the only case yielding a solution is $k = 3, j=1$, giving $x=3,y=2, z=9.$
+
+
+\vspace{24pt}
+\item %Geometry. #20 Bulgarian Spring Mathematics Festival 1997.
+{\itshape Triangle $ABC$ has an area of 7. $M$ and $N$ are points on the sides $AB$ and $AC$ respectively, such that $AN = BM.$ Let $O$ be the intersection point of $BN$ and $CM.$ The area of triangle $BOC$ is 2.
+\begin{enumerate}
+\item Prove that $MB:AB = 1:3$ and $MB:AB = 2:3.$
+\item Find the size of $\angle AOB.$\\
+\end{enumerate}}
+
+\begin{enumerate}
+\item
+Let $\frac{MB}{AB} = x$. We then have $|ABN| = 7x = |BMC|$. Thus,
+$|BOM| = 7x - 2$ and $|AMON| = |BOC| = 2$. We now have
+$|CON| = 7 - 2 - 2 - (7x - 2) = 5 - 7x$,\\
+$|ANO| = \frac{x}{1 - x}. |CNO| = \frac{x(5 - 7x)}{1 - x}$,\\
+$|AMO| = \frac{1 - x}{x}.|BOM| = \frac{(1 - x)(7x - 2)}{x}.$
+
+From the fact that $|AMON| = |ANO| + |AMO|$ we have that
+$2 = \frac{x(5 - 7x)}{1 - x}+\frac{(1 - x)(7x - 2)}{x}$,\\
+which simplifies to $9x^2 - 9x + 2 = 0$ which has roots $x_1 = \frac{1}{3}$ and $x_2 = \frac{2}{3}$.
+
+\item
+$\Delta ABN \cong \Delta BMC$ and so $\angle BOM = \angle BCM + \angle CBO = \angle MBO + \angle CBO = 60^\circ$.
+
+Since $\angle MAN + \angle MON = 180^{\circ}$, $AMON$ is a
+cyclic quadrilateral. Let $\frac{MB}{AB} = \frac{1}{3}$, i.e. $AM = 2BM = 2AN$. Let $Q$ be the midpoint of the line segment $AM$. Triangle $AQN$ is then isosceles, and $\angle NAQ = 60^\circ$, thus it is also equilateral. $Q$ is then the centre of the circle $ANOM$ and $\angle AOM = \angle ANM = 90^\circ$.
+
+Thus, $\angle AOB = 150^\circ$.
+Similarly, when $\frac{MB}{AB} = \frac{2}{3}$, i.e. $2AM = MB = AN$, we have $\angle AMN = \angle AON = 90^\circ$, i.e. $\angle AOB = 90^\circ$.
+
+
+\end{enumerate}
+
+
+\vspace{24pt}
+\item %Combinatorics. #15 Bulgarian Spring Mathematics Festival 1995. 
+{\itshape $n$ points are given in the plane $(n > 4),$ such that no three of them are collinear. The points are used as vertices to form at least $n$ triangles. Show that there exist two triangles which have exactly one vertex in common.}
+
+
+Assume for contradiction that for some $n$ $(n>4),$ no two triangles have exactly one vertex in common and let $k$ be the smallest $n$ such that this is true. Since from $k$ points, we form $k+1$ triangles, by the Pigeon-hole principle, there exists a point, say $A,$ which is a common vertex for at least $4$ triangles. Let the first triangle be $ABC$. The second triangle has, besides point $A$, either point $B$ or point $C$ as a vertex. So let the second triangle be $ABD$. If the third triangle is of the form $ACX$, then $X=D$ since otherwise, $ACX$ and $ABD$ have exactly one vertex in common. We thus have the three triangles $ABC$, $ABD$ and $ACD$. Then the fourth triangle with $A$ as a vertex, needs to also have either $B$ or $C$ as a vertex too. It is easy to show that in both cases we end up with two triangles sharing exactly one common vertex, which is a contradiction. Thus, the third triangle needs to have both $A$ and $B$ as vertices, and so does the fourth. \\
+Extending this idea, let $A$ be a vertex in $t$ triangles, $t\geq 4.$ Then these triangles are of the form $ABA_1, ABA_2, ABA_3, \dots , ABA_t,$ where points $A_1, A_2, \dots , A_t$ are all distinct. It is easy to verify that we cannot have a triangle of the form $BXY,$ where $X$ and $Y$ are points different from $A_1, A_2, \dots A_t,$ nor a triangle of the form $BA_iA_j;$ nor of the form $A_iA_jA_m$ - in each of these cases we end up with a pair of triangles sharing exactly one common vertex, which is a contradiction. Hence, the points $A, B, A_1, A_2, \dots, A_t$ are vertices only of triangles $ABA_1, ABA_2, ABA_3, \dots , ABA_t.$ In this way we used $t+2$ points to form $t$ triangles. We cannot have $t+2 = k,$ since the number of triangles are $t<k.$ Thus we need $k_0 = k-t-2$ additional points and at least $k+1-t$ additional triangles, no two of which have exactly one vertex in common, to satisfy the conditions of the question. Since the number of triangles is more than the number of points, $k+1-t > k_0,$ we have that $k_0 >4.$ Thus, we have found $k_0 <k$ satisfying the conditions of the question, which contradicts with the choice of $k$.
+
+\end{enumerate}
+
+\end{document}
