@@ -22,7 +22,14 @@
 
 \begin{enumerate}[leftmargin=0pt, itemsep=18pt]
 
-\item
+\item % China Girls Maths Olympiad 2011, P7
+We have $n$ boxes labelled $B_1, B_2, \dots, B_n$. Initially there are $n$ balls in total in these $n$ boxes. (There may be some boxes with more than one ball, and some boxes that are empty.) One each turn, we are allowed to perform one of three operations:
+\begin{itemize}
+  \item If there is at least $1$ ball in box $B_1$, we can remove this ball from box $B_1$ and add a ball to box $B_2$.
+  \item If there are at least $2$ balls in box $B_i$ where $1 < i < n$, then we can remove $2$ balls from box $B_i$, and add $1$ ball to each of boxes $B_{i - 1}$ and $B_{i + 1}$.
+  \item If there is at least $1$ ball in box $B_n$, we can remove this ball from box $B_n$ and add a ball to box $B_{n - 1}$.
+\end{itemize}
+Show that no matter how the balls are initially distributed, it is possible to use these operations to obtain the situation where there is exactly one ball in each box.
 
 
 \item % IMOSL 2020 G1
