@@ -1,0 +1,127 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  \textbf{\Large Advanced March Monthly Assignment Solutions}
+\end{center}
+
+
+\begin{enumerate}[1.]
+\vfill
+\item % Tim Schlesinger, definitely standard graph theory stuff
+There are $n$ towns in a country.
+Every road in this country goes from one of these towns to another (different) town. These are not one-way roads.
+Two independent routes from town $A$ to town $B$ are routes that don't have any intermediate towns in common (i.e. there are no towns that lie between $A$ and $B$ on both routes).
+If we are told that there are at least two independent routes from any town $A$ to any other town $B$, what is the minimum number of roads that could be in this country?
+
+
+\vfill
+\item % Tim Schlesinger
+Let $ABC$ be a triangle with centroid $G$ and $AB\neq BC$.
+$\Gamma$ is the circle with diameter $BG$ and $H$ is its centre.
+Let $CG$ extended intersect $AB$ at $F$ and $\Gamma$ at $I$ different to $G$.
+Let $AG$ extended intersect $BC$ at $D$ and $\Gamma$ at $J$ different to $G$. Show that $IJ$ is parallel to $FD$ if and only if $I$, $H$, and $J$ are collinear.
+
+
+\vfill
+\item % Serbian MO 2020, P1
+Find all monic polynomials $P(x)$ such that the polynomial $P(x)^2-1$ is divisible by the polynomial $P(x+1)$.
+
+
+\vfill
+\item % French Number Theory Training Assignment
+Let $a_0, a_1, \dots, a_d$ be integers such that $\gcd(a_0, a_1) = 1$. Define the sequence $(u_n)_{n=1}^{\infty}$ by
+\[
+  u_n = \sum_{k = 0}^{d} a_k \varphi(n + k).
+\]
+Show that $1$ is the only positive integer that divides every term of the sequence $(u_n)_{n = 1}^{\infty}$.
+
+
+\vfill
+\item % Canada 2012
+There are some scientists spread throughout a research laboratory in Area 51 which is shaped like a rectangle made up of unit squares.
+Each unit square is a room, and each edge between two adjacent unit squares is a wall which may or may not have a door in it, but none of the walls on the outside of the laboratory have doors in them (it's a strange building, but what else would you expect from Area 51).
+
+Each of these scientists has a piece of an alien object, and they all want to bring the pieces together in one room so that the alien object can activate, from which point onward every pet in the world will be completely healthy, never die, and be able to speak.
+However, these scientists cannot communicate with each other.
+Instead, there is a mysterious stranger named Anthony Lien outside the building who can see exactly where each scientist is.
+Anthony Lien has access to the laboratory's intercom system, and one at a time he can announce either north, south, east, or west over the intercom system, at which point each scientist in the building will move one unit in that direction to the next room; if the wall in that direction does not have a door in it, then that scientist will stay where they are.
+
+Show that if each room can be reached from every other room, then Anthony Lien can always bring all the scientists into the same room.
+
+
+\vfill
+\item % Ukraine 2016-2017, page 50 Q5
+Find all functions $f : \mathbb{Q} \to \mathbb{R}$ such that for all $x, y, z \in \mathbb{Q}$ we have
+\[ \mspace{-24mu} 3f(x+y+z) +f(-x+y+z) +f(x-y+z) +f(x+y-z) +4f(x) +4f(y) +4f(z) = 4f(x+y) +4f(y+z) +4f(z+x). \]
+
+SOLUTION:\\
+
+From $x=y=z=0$ we have:
+\\$16f(0) = 12f(0) \\\implies f(0) = 0$
+\\\\From $y=z=0$ we have:
+\\$3f(x) + f(-x) + f(x) + f(x) + 4f(x) + 4f(0) + 4f(0) = 4f(x) + 4f(0) + 4f(x)$
+\\$\implies f(-x) = -f(x)$
+\\\\Let $y=nx, z=x$ for some $n \in \mathbb{N}$
+\\$3f((n+2)x) + f(nx) + f((2-n)x) + f(nx) + 4f(x) + 4f(nx) + 4f(x) = 4f((n+1)x) + 4f((n+1)x) + 4f(2x)$
+\begin{align}
+f((n+2)x) = 8f((n+1)x) -6f(nx) + f((n-2)x) +4f(2x) - 8f(x)
+\end{align}
+
+Let $f(1) = a$ and $f(2) = b$ using strong induction, we will prove that $f(n) = n(\frac{(n^2-1)}{6}(b-2a)+a)$ 
+\\Note that for $n\in \{-1,0,1,2\}$ the condition holds.
+\\\\If $f(n)$ holds for $n\in\{k-2,k-1,k,k+1\}$ then by letting $n=k, x=1$ in $(1)$ we have that:
+\begin{align}
+3f(k+2) = 8f(k+1) -6f(k) + f(k-2) +4f(2) - 8f(1)\nonumber
+\end{align}
+$3f(k+2) = 8(k+1)(\frac{((k+1)^2-1)}{6}(b-2a)+a) - 6k(\frac{(k^2-1)}{6}(b-2a)+a) + (k-2)(\frac{((k-2)^2-1)}{6}(b-2a)+a) + 4b - 8a$\\
+
+Simplifying shows that $f(n)$ holds for $n = k+2$, completing our induction. It can also be trivially seen that $f(n) = -f(-n)$, meaning $f$ holds for $n\in\mathbb{Z}$.
+\\\\Note that the same result can be shown for $f(\frac{n}{m})$ for $m,n\in\mathbb{N} $ by setting $f(\frac{1}{m}) = a_m$ and  $f(\frac{2}{m}) = b_m$. Let $f(\frac{n}{m})$ be denoted as $f_m(n)$.
+\\\\With this we have that:
+\begin{align}
+nm(\frac{((nm)^2-1)}{6}(b_m-2a_m)+a_m) = f_m(nm) = f(\frac{nm}{m}) = f(n) = n(\frac{(n^2-1)}{6}(b-2a)+a)
+\end{align}
+\\In order to extend $f$ to $\mathbb{Q}$ we want to now show that:
+\begin{align}
+n(\frac{(n^2-1)}{6}(b_m-2a_m)+a_m) = \frac{n}{m}(\frac{(\frac{n}{m}^2-1)}{6}(b-2a)+a) = f(\frac{n}{m})
+\end{align}
+
+From $(2)$ we have that:
+\begin{align}
+\frac{(m(nm)^2-m)}{6}(b_m-2a_m)+ma_m &= \frac{(n^2-1)}{6}(b-2a)+a
+\\\frac{(m(nm)^2-m)}{(n^2-1)}\frac{b_m-2a_m}{b-2a} &= 1 + \frac{6(a-ma_m)}{n^2-1}
+\\\lim_{n\to\infty}\frac{(m(nm)^2-m)}{(n^2-1)}\frac{b_m-2a_m}{b-2a} &= \lim_{n\to\infty} 1 + \frac{6(a-ma_m)}{n^2-1}
+\\m^3 \frac{b_m-2a_m}{b-2a} &= 1 
+\\ b_m-2a_m &= \frac{1}{m^3}(b-2a) 
+\end{align}
+Subbing this back into $(4)$ gives us:
+\begin{align}
+\frac{(n^2-1)}{6}(b-2a)+a &= \frac{(nm)^2-1}{6}(\frac{1}{m^2}(b-2a))+ma_m
+\\\implies ma_m &= a + \frac{\frac{1}{m^2}-1}{6}(b-2a)
+\end{align}
+
+We can use $(8)$ and $(10)$ in $(3)$
+\begin{align}
+ n(\frac{(n^2-1)}{6}(b_m-2a_m)+a_m) &= \frac{n}{m}(\frac{m(n^2-1)}{6}(\frac{1}{m^3}(b-2a))+a + \frac{\frac{1}{m^2}-1}{6}(b-2a))
+\\ &= \frac{n}{m}(\frac{(\frac{n}{m}^2-1)}{6}(b-2a)+a)
+\\ &= f(\frac{n}{m})
+\end{align}
+
+Finally, we can check $f$ by substituting it into the original question and see that it holds, completing the proof.
+
+Note that in $(5)$ if $b-2a = 0$, this would trivially result in $f(x) = ax$
+
+\end{enumerate}
+
+\end{document}
