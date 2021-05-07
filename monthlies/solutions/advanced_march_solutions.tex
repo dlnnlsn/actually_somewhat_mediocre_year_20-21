@@ -37,6 +37,28 @@ Let $AG$ extended intersect $BC$ at $D$ and $\Gamma$ at $J$ different to $G$. Sh
 \item % Serbian MO 2020, P1
 Find all monic polynomials $P(x)$ such that the polynomial $P(x)^2-1$ is divisible by the polynomial $P(x+1)$.
 
+SOLUTION:\\
+
+Let $P(x) = \prod (x-r_{i})$ be some monic polynomial such that the statement holds.\\
+Let $Re(r_{i}) \leq Re(r_{j})\iff {i} \leq {j}$.\\
+If $Q(x)|R(x)$ for some polynomials $Q$ and $R$ then we have that the roots of $Q$ are shared by $R$.\\
+Hence we have that, for root $r_{1}-1$ of $P(x+1)$:\\
+$P(r{1}-1+1) = 0\implies P(r_{1}-1)^{2}-1 = 0$\\
+$\iff (P(r_{1}-1)-1)(P(r_{1}-1)+1) = 0$\\
+$\iff |P(r_{1}-1)| = 1$\\
+$\iff |\prod (r_{1}-r_{i}-1)| = 1$\\
+$\iff \prod|(r_{1}-r_{i}-1)| = 1$\\
+Note $|r| \geq |Re(r)|$\\
+$\implies 1 = \prod|(r_{1}-r_{i}-1)| \geq \prod|(Re(r_{1})-Re(r_{i})-1)|$\\
+But we have that $Re(r_{1})-Re(r_{i})-1 \leq -1 \implies |(Re(r_{1})-Re(r_{i})-1)| \geq 1$\\
+But $\prod|(Re(r_{1})-Re(r_{i})-1)| \leq 1$\\ 
+$\implies |Re(r_{1})-Re(r_{i})-1| = 1$\\
+$\implies Re(r_{1}) = Re(r_{i})$\\
+Similarly, $Im(r_{1}) = Im(r_{i})$\\
+$\implies P(x) = (x-r)^{n}$\\
+Now to check this solution, let $y = x-r$\\
+$(y+1)^{n}|y^{2n}-1$\\
+The roots of the RHS are equally spaced on the unit circle in the complex plane, meaning that it has at most one root at $y=-1\implies n=1$ or $n=0$.
 
 \vfill
 \item % French Number Theory Training Assignment
@@ -46,6 +68,16 @@ Let $a_0, a_1, \dots, a_d$ be integers such that $\gcd(a_0, a_1) = 1$. Define th
 \]
 Show that $1$ is the only positive integer that divides every term of the sequence $(u_n)_{n = 1}^{\infty}$.
 
+SOLUTION:\\
+
+Let the GCD of the sequence be $g$ and assume there exists a prime $p$ that divides $g$.\\
+Using Dirichlet's Theorem, we know that we can find $d$ primes, $p_{i}$, of the form $n_{i}p + 1$, where $\{n_{i}\}_{i=0}^{d-1} \subset \mathbb{N}$.
+Now, with Chinese Remainder Theorem, we can find an $a$ such that $a\equiv_{p_{i}} -i$.\\
+Note that $\phi(m)$ is divisible by $q-1$ where $q$ is a prime divisor of $m$. Meaning that $\phi(a+i)$ is divisible by $p_{i}-1 = ap\implies p|\phi(a+i)$.\\
+Let $m$ be the smallest positive value such that $p\not|\phi(a-m)$. Note that $a-m\geq2$ as $\phi(2) = 1$ and $p\not|1$.\\
+From $u_{a-m}$ we have $a_{0}\phi(a-m) \equiv_{p} 0\implies p|a_{0}$\\
+And from $u_{a-m-1}$ we have $a_{0}\phi(a-m-1) + a_{1}\phi(a-m) \equiv_{p}0\implies a_{1}\phi(a-m) \equiv_{p} = 0 \implies p|a_{1}$\\
+As gcd($a_{0},a_{1}$)$=1$ this is a contradiction $\implies$ there can be no primes that divide $g\implies g=1$.
 
 \vfill
 \item % Canada 2012
